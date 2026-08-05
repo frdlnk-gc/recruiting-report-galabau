@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Recruiting-Report 2026 – Kostenlos für GaLaBau-Betriebe | GreenCareers</title>
+  <meta name="description" content="Der kostenlose Recruiting-Report 2026 für GaLaBau-Betriebe: Welche 5 Kanäle wirklich Bewerber bringen, was eine Einstellung kostet – 32 Seiten mit Benchmarks und Vorlagen.">
+  <meta property="og:title" content="Recruiting-Report 2026 – Kostenlos für GaLaBau-Betriebe">
+  <meta property="og:description" content="32 Seiten Benchmarks: Welche Kanäle 2026 wirklich Bewerber bringen und was eine Einstellung pro Kanal kostet.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon-32.png">
+
+  <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+
+  <style>
+    /* ===== Fonts (self-hosted, latin subsets) ===== */
+    @font-face{font-family:'Fraunces';src:url('assets/fonts/fraunces-var.woff2') format('woff2');font-weight:600 700;font-style:normal;font-display:swap;}
+    @font-face{font-family:'Fraunces';src:url('assets/fonts/fraunces-italic.woff2') format('woff2');font-weight:600;font-style:italic;font-display:swap;}
+    @font-face{font-family:'Inter';src:url('assets/fonts/inter-var.woff2') format('woff2');font-weight:400 800;font-style:normal;font-display:swap;}
+
+    :root{
+      --bg:#0A1710;
+      --bg-2:#0D1F15;
+      --card:#122A1C;
+      --ink:#F4F1E8;
+      --ink-dim:rgba(244,241,232,.70);
+      --ink-faint:rgba(244,241,232,.45);
+      --green:#16A34A;
+      --green-deep:#15803D;
+      --green-bright:#22C55E;
+      --mint:#6EE7A0;
+      --line:rgba(244,241,232,.10);
+      --q-ink:#0B1F14;
+      --q-dim:#4B5A50;
+      --radius:22px;
+      --shadow:0 24px 60px -18px rgba(0,0,0,.55);
+      --font-serif:'Fraunces',Georgia,serif;
+      --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px;overflow-x:hidden;}
+    img{max-width:100%;display:block;}
+    a{color:inherit;}
+    .container{max-width:1140px;margin:0 auto;padding:0 20px;}
+    .serif{font-family:var(--font-serif);}
+    em.accent{font-family:var(--font-serif);font-style:italic;font-weight:600;color:var(--mint);}
+
+    /* ===== Reveal ===== */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.in{opacity:1;transform:none;}
+    @media (prefers-reduced-motion: reduce){
+      .reveal{opacity:1;transform:none;transition:none;}
+      html{scroll-behavior:auto;}
+      .marquee-track{animation:none !important;}
+    }
+
+    /* ===== Topbar ===== */
+    .topbar{position:absolute;top:0;left:0;right:0;z-index:20;padding:18px 0;}
+    .topbar .container{display:flex;align-items:center;justify-content:space-between;}
+    .topbar img{height:40px;width:auto;}
+    .topbar-trust{display:none;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:var(--ink-dim);background:rgba(10,23,16,.45);border:1px solid var(--line);border-radius:999px;padding:7px 13px;backdrop-filter:blur(6px);}
+    .topbar-trust .stars{color:#FBBF24;letter-spacing:1px;font-size:.75rem;}
+    @media(min-width:768px){.topbar-trust{display:flex;}}
+
+    /* ===== Hero ===== */
+    .hero{position:relative;padding:78px 0 40px;display:flex;align-items:center;}
+    @media(min-width:1024px){.hero{min-height:100svh;}}
+    .hero-bg{position:absolute;inset:0;overflow:hidden;background:
+      radial-gradient(120% 70% at 85% -10%,rgba(34,197,94,.16),transparent 60%),
+      radial-gradient(90% 60% at -10% 40%,rgba(22,101,52,.25),transparent 60%),
+      linear-gradient(175deg,#10281B 0%,var(--bg) 60%);}
+    .hero-bg picture{display:none;}
+    @media(min-width:768px){
+      .hero-bg picture{display:block;height:100%;}
+      .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% 30%;}
+      .hero-bg::after{content:'';position:absolute;inset:0;background:
+        linear-gradient(180deg,rgba(10,23,16,.55) 0%,rgba(10,23,16,.78) 46%,var(--bg) 96%),
+        linear-gradient(100deg,rgba(10,23,16,.62) 0%,rgba(10,23,16,.15) 70%);}
+    }
+    .hero .container{position:relative;z-index:2;display:grid;gap:34px;width:100%;}
+    @media(min-width:1024px){
+      .hero{padding:120px 0 72px;}
+      .hero .container{grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+    }
+
+    .hero-badge{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(110,231,160,.35);background:rgba(22,163,74,.14);color:#C9F2D6;border-radius:999px;padding:8px 15px;font-size:.8rem;font-weight:600;letter-spacing:.02em;backdrop-filter:blur(4px);}
+    .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green-bright);box-shadow:0 0 0 0 rgba(34,197,94,.5);animation:pulse 2.2s infinite;}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.45);}70%{box-shadow:0 0 0 9px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
+
+    .hero h1{font-family:var(--font-serif);font-weight:600;font-size:clamp(2.05rem,7.8vw,4.1rem);line-height:1.08;letter-spacing:-.015em;margin:16px 0 12px;}
+    .hero h1 .ital{font-style:italic;color:var(--mint);}
+    .hero-sub{font-size:clamp(.95rem,2.5vw,1.13rem);color:var(--ink-dim);max-width:34em;}
+    .hero-sub b{color:var(--ink);font-weight:600;}
+
+    .trust-strip{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:18px;font-size:.82rem;color:var(--ink-dim);}
+    .trust-strip .stars{color:#FBBF24;letter-spacing:1.5px;}
+    .trust-strip b{color:var(--ink);font-weight:700;}
+    .trust-item{display:flex;align-items:center;gap:7px;}
+    .trust-strip.under-card{margin-top:20px;justify-content:center;}
+    @media(min-width:1024px){.trust-strip.under-card{display:none;}}
+    .trust-strip.in-copy{display:none;}
+    @media(min-width:1024px){.trust-strip.in-copy{display:flex;}}
+
+    /* ===== Quiz Card ===== */
+    .quiz-card{background:#fff;color:var(--q-ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 20px 20px;position:relative;}
+    @media(min-width:1024px){.quiz-card{padding:28px 28px 24px;}}
+    .quiz-head{display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:1px solid #EAE7DE;margin-bottom:16px;}
+    .quiz-head-cover{width:52px;border-radius:6px;box-shadow:0 6px 16px rgba(11,31,20,.25);flex:none;}
+    .quiz-head-titles{flex:1;min-width:0;}
+    .quiz-head-titles .t1{font-weight:800;font-size:.95rem;line-height:1.3;}
+    .quiz-head-titles .t2{font-size:.78rem;color:var(--q-dim);margin-top:2px;}
+    .quiz-tag{flex:none;background:var(--green);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.06em;border-radius:7px;padding:5px 9px;transform:rotate(2deg);}
+
+    .quiz-progress{display:none;margin-bottom:14px;}
+    .quiz-progress.visible{display:block;}
+    .quiz-progress-top{display:flex;justify-content:space-between;font-size:.74rem;font-weight:600;color:var(--q-dim);margin-bottom:7px;}
+    .quiz-progress-bar{height:5px;background:#ECE9E0;border-radius:99px;overflow:hidden;}
+    .quiz-progress-fill{height:100%;width:20%;background:linear-gradient(90deg,var(--green),var(--green-bright));border-radius:99px;transition:width .35s ease;}
+
+    .quiz-slide{display:none;}
+    .quiz-slide.is-active{display:block;animation:slideIn .28s ease;}
+    @keyframes slideIn{from{opacity:0;transform:translateX(14px);}to{opacity:1;transform:none;}}
+
+    .quiz-question{font-weight:800;font-size:1.12rem;line-height:1.35;letter-spacing:-.01em;}
+    .quiz-subtext{font-size:.84rem;color:var(--q-dim);margin:6px 0 14px;}
+    .quiz-options{display:grid;gap:9px;}
+    .quiz-option{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;text-align:left;font-family:var(--font-sans);font-size:.95rem;font-weight:600;color:var(--q-ink);background:#F7F5EF;border:1.5px solid #E5E1D6;border-radius:13px;padding:14px 16px;cursor:pointer;transition:border-color .15s,background .15s,transform .1s;}
+    .quiz-option::after{content:'→';color:#B9B4A6;font-weight:700;transition:color .15s,transform .15s;}
+    .quiz-option:hover{border-color:var(--green);background:#F0FAF3;}
+    .quiz-option:hover::after{color:var(--green);transform:translateX(2px);}
+    .quiz-option:active{transform:scale(.985);}
+    .quiz-option.picked{border-color:var(--green);background:#E8F8EE;}
+    .quiz-option.picked::after{content:'✓';color:var(--green);}
+
+    .quiz-input-group{margin-bottom:11px;}
+    .quiz-label{display:block;font-size:.78rem;font-weight:700;margin-bottom:6px;color:var(--q-ink);}
+    .quiz-input{width:100%;font-family:var(--font-sans);font-size:16px;padding:13px 15px;border:1.5px solid #E5E1D6;border-radius:12px;background:#FBFAF7;color:var(--q-ink);outline:none;transition:border-color .15s,box-shadow .15s;}
+    .quiz-input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(22,163,74,.13);background:#fff;}
+    .quiz-input.is-error{border-color:#DC2626;}
+    .phone-row{display:flex;gap:8px;}
+    .phone-prefix{flex:none;display:flex;align-items:center;font-family:var(--font-sans);font-size:16px;font-weight:600;color:var(--q-ink);background:#F1EFE8;border:1.5px solid #E5E1D6;border-radius:12px;padding:0 10px;cursor:pointer;}
+    select.phone-prefix{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%234B5A50' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;background-size:11px;padding-right:26px;}
+    select.phone-prefix:focus{outline:none;border-color:var(--green);}
+    .quiz-confirm{display:none;font-size:.8rem;font-weight:600;line-height:1.5;color:#166534;background:#E8F8EE;border:1px solid #BBEBCE;border-radius:11px;padding:10px 13px;margin-bottom:13px;}
+    .quiz-confirm.visible{display:block;}
+
+    .quiz-cta{width:100%;font-family:var(--font-sans);font-size:1.02rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border:none;border-radius:13px;padding:16px 18px;cursor:pointer;box-shadow:0 10px 24px -8px rgba(22,163,74,.55);transition:transform .12s,box-shadow .15s,opacity .15s;margin-top:4px;}
+    .quiz-cta:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 14px 28px -8px rgba(22,163,74,.6);}
+    .quiz-cta:active:not(:disabled){transform:scale(.985);}
+    .quiz-cta:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;}
+
+    .quiz-back{background:none;border:none;font-family:var(--font-sans);font-size:.8rem;font-weight:600;color:var(--q-dim);cursor:pointer;padding:9px 2px 0;}
+    .quiz-back:hover{color:var(--q-ink);}
+    .quiz-error{display:none;font-size:.8rem;font-weight:600;color:#DC2626;margin-top:8px;}
+    .quiz-error.active{display:block;}
+    .quiz-trustline{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;padding-top:13px;border-top:1px solid #EAE7DE;font-size:.72rem;color:var(--q-dim);}
+    .quiz-trustline span{display:flex;align-items:center;gap:5px;}
+    .quiz-privacy{display:flex;align-items:flex-start;gap:10px;font-size:.78rem;color:var(--q-dim);margin:4px 0 12px;cursor:pointer;line-height:1.5;}
+    .quiz-privacy input{width:17px;height:17px;margin-top:2px;accent-color:var(--green);flex:none;cursor:pointer;}
+    .quiz-privacy a{color:var(--green-deep);}
+
+    /* Success */
+    .quiz-success{display:none;text-align:center;padding:8px 0 4px;}
+    .quiz-success.active{display:block;animation:slideIn .3s ease;}
+    .success-check{width:56px;height:56px;border-radius:50%;background:#E8F8EE;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.5rem;color:var(--green);border:2px solid var(--green-bright);}
+    .quiz-success h3{font-family:var(--font-serif);font-weight:600;font-size:1.45rem;letter-spacing:-.01em;margin-bottom:6px;}
+    .quiz-success p{font-size:.86rem;color:var(--q-dim);}
+    .success-open{display:block;width:100%;text-decoration:none;text-align:center;font-size:1.02rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:13px;padding:16px 18px;margin:16px 0 10px;box-shadow:0 10px 24px -8px rgba(22,163,74,.55);}
+    .success-mailnote{font-size:.78rem;color:var(--q-dim);}
+    .success-teamnote{font-size:.78rem;font-weight:700;color:var(--green-deep);margin-top:12px;}
+
+    /* ===== Sections ===== */
+    section{padding:64px 0;}
+    @media(min-width:1024px){section{padding:88px 0;}}
+    .section-label{display:flex;align-items:center;gap:10px;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mint);margin-bottom:14px;}
+    .section-label::before{content:'';width:26px;height:1.5px;background:var(--mint);}
+    .section-title{font-family:var(--font-serif);font-weight:600;font-size:clamp(1.7rem,5.6vw,2.6rem);line-height:1.13;letter-spacing:-.01em;max-width:20em;}
+    .section-sub{color:var(--ink-dim);margin-top:12px;max-width:38em;font-size:.98rem;}
+
+    /* Logos */
+    .logos{padding:34px 0 10px;}
+    .logos-label{text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;}
+    .marquee{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+    .marquee-track{display:flex;gap:12px;width:max-content;animation:marquee 36s linear infinite;}
+    @keyframes marquee{to{transform:translateX(-50%);}}
+    .logo-chip{flex:none;background:#fff;border-radius:12px;padding:10px 18px;display:flex;align-items:center;justify-content:center;height:58px;}
+    .logo-chip img{height:36px;width:auto;max-width:120px;object-fit:contain;}
+
+    /* Preview slider */
+    .preview-scroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px 20px 10px;margin:0 -20px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .preview-scroll::-webkit-scrollbar{display:none;}
+    @media(min-width:1024px){.preview-scroll{margin:0;padding:30px 0 10px;overflow-x:visible;}}
+    .preview-card{flex:0 0 78%;max-width:330px;scroll-snap-align:center;}
+    @media(min-width:1024px){.preview-card{flex:1;}}
+    .preview-frame{background:#fff;border-radius:14px;padding:8px;box-shadow:0 18px 44px -14px rgba(0,0,0,.5);transition:transform .25s ease;}
+    .preview-card:nth-child(1) .preview-frame{transform:rotate(-1.2deg);}
+    .preview-card:nth-child(3) .preview-frame{transform:rotate(1.2deg);}
+    .preview-frame:hover{transform:rotate(0) translateY(-4px);}
+    .preview-frame img{border-radius:8px;aspect-ratio:495/700;object-fit:cover;width:100%;}
+    .preview-meta{display:flex;align-items:baseline;gap:9px;margin-top:13px;padding:0 4px;}
+    .preview-page{flex:none;font-size:.68rem;font-weight:800;letter-spacing:.08em;color:var(--bg);background:var(--mint);border-radius:6px;padding:3px 7px;}
+    .preview-caption{font-size:.85rem;font-weight:600;color:var(--ink-dim);line-height:1.45;}
+    .preview-hint{text-align:center;font-size:.75rem;color:var(--ink-faint);margin-top:14px;}
+    @media(min-width:1024px){.preview-hint{display:none;}}
+
+    /* Chapters */
+    .chapters{display:grid;gap:10px;margin-top:30px;}
+    @media(min-width:768px){.chapters{grid-template-columns:1fr 1fr;gap:12px;}}
+    .chapter{display:flex;gap:14px;align-items:flex-start;background:var(--bg-2);border:1px solid var(--line);border-radius:15px;padding:15px 17px;}
+    .chapter-num{flex:none;font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:1.05rem;color:var(--mint);width:26px;padding-top:1px;}
+    .chapter-body b{display:block;font-size:.92rem;font-weight:700;line-height:1.4;}
+    .chapter-body span{font-size:.8rem;color:var(--ink-dim);}
+    .chapter-page{flex:none;margin-left:auto;font-size:.7rem;font-weight:700;color:var(--ink-faint);white-space:nowrap;padding-top:3px;}
+
+    /* Numbers */
+    .numbers-grid{display:grid;gap:14px;margin-top:34px;}
+    @media(min-width:768px){.numbers-grid{grid-template-columns:repeat(3,1fr);gap:18px;}}
+    .number-card{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;}
+    .number-big{font-family:var(--font-serif);font-weight:600;font-size:clamp(2.3rem,7vw,3rem);line-height:1;color:var(--mint);letter-spacing:-.02em;}
+    .number-label{font-weight:700;font-size:.95rem;margin:10px 0 6px;}
+    .number-desc{font-size:.85rem;color:var(--ink-dim);}
+    .number-link{display:inline-block;font-size:.78rem;font-weight:700;color:var(--green-bright);margin-top:12px;}
+    .numbers-src{font-size:.72rem;color:var(--ink-faint);margin-top:18px;}
+
+    /* Network map */
+    .network-grid{display:grid;gap:30px;margin-top:8px;align-items:center;}
+    @media(min-width:1024px){.network-grid{grid-template-columns:1fr 1.05fr;gap:56px;}}
+    .network-stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;}
+    .network-stat b{display:block;font-family:var(--font-serif);font-weight:600;font-size:1.6rem;color:var(--mint);letter-spacing:-.01em;}
+    .network-stat span{font-size:.78rem;color:var(--ink-dim);}
+    .network-map{position:relative;max-width:480px;margin:10px auto 0;width:100%;}
+    .network-map svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35));}
+    .country{fill:rgba(34,197,94,.07);stroke:rgba(110,231,160,.38);stroke-width:1.4;stroke-linejoin:round;}
+    .city-dot{fill:var(--green-bright);}
+    .city-core{fill:#fff;}
+    .city-ring{fill:none;stroke:var(--green-bright);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ringPulse 2.8s ease-out infinite;}
+    @keyframes ringPulse{0%{transform:scale(.35);opacity:.85;}75%{transform:scale(2.7);opacity:0;}100%{transform:scale(2.7);opacity:0;}}
+    .map-chip{position:absolute;display:flex;gap:9px;align-items:center;background:rgba(10,23,16,.92);border:1px solid rgba(110,231,160,.32);backdrop-filter:blur(6px);border-radius:12px;padding:8px 12px;font-size:.7rem;line-height:1.3;color:var(--ink-dim);box-shadow:0 12px 28px rgba(0,0,0,.5);opacity:0;transform:translate(-50%,-115%) translateY(6px);transition:opacity .25s ease,transform .25s ease;white-space:nowrap;pointer-events:none;z-index:3;}
+    .map-chip.on{opacity:1;transform:translate(-50%,-115%);}
+    .map-chip b{display:block;color:#fff;font-size:.74rem;}
+    .map-chip .cd{width:8px;height:8px;border-radius:50%;background:var(--green-bright);flex:none;box-shadow:0 0 0 0 rgba(34,197,94,.5);animation:pulse 2.2s infinite;}
+    .map-ping{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;border:2.5px solid var(--green-bright);opacity:0;transform:scale(.5);pointer-events:none;z-index:2;}
+    .map-ping.on{animation:pingGrow 1.1s ease-out infinite;}
+    @keyframes pingGrow{0%{opacity:.95;transform:scale(.5);}80%{opacity:0;transform:scale(2.4);}100%{opacity:0;transform:scale(2.4);}}
+    @media (prefers-reduced-motion: reduce){
+      .city-ring{animation:none;opacity:0;}
+      .map-ping{display:none;}
+    }
+
+    /* Audience */
+    .audience-card{display:grid;gap:0;background:var(--bg-2);border:1px solid var(--line);border-radius:26px;overflow:hidden;}
+    @media(min-width:900px){.audience-card{grid-template-columns:1fr 1.15fr;align-items:stretch;}}
+    .audience-img{position:relative;min-height:240px;}
+    .audience-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;}
+    @media(max-width:899px){.audience-img{aspect-ratio:4/3;min-height:0;}.audience-img img{position:static;height:100%;aspect-ratio:4/3;}}
+    .audience-copy{padding:28px 24px;}
+    @media(min-width:900px){.audience-copy{padding:44px 42px;}}
+    .audience-list{list-style:none;margin-top:16px;display:grid;gap:9px;}
+    .audience-list li{position:relative;padding-left:26px;font-size:.9rem;color:var(--ink-dim);}
+    .audience-list li::before{content:'✓';position:absolute;left:0;top:0;color:var(--green-bright);font-weight:800;}
+
+    /* Testimonials */
+    .testi-grid{display:grid;gap:14px;margin-top:34px;}
+    @media(min-width:768px){.testi-grid{grid-template-columns:repeat(3,1fr);gap:18px;}}
+    .testi{background:#fff;color:var(--q-ink);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;gap:12px;}
+    .testi-result{font-family:var(--font-serif);font-weight:600;font-size:1.15rem;letter-spacing:-.01em;color:#166534;}
+    .testi .stars{color:#FBBF24;font-size:.85rem;letter-spacing:2px;margin-top:-4px;}
+    .testi p{font-size:.9rem;line-height:1.6;flex:1;}
+    .testi-foot{display:flex;align-items:center;gap:11px;}
+    .testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex:none;}
+    .testi-name{font-weight:700;font-size:.85rem;line-height:1.3;}
+    .testi-verified{font-size:.72rem;color:var(--q-dim);}
+    .google-badge{display:inline-flex;align-items:center;gap:9px;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.82rem;font-weight:600;color:var(--ink-dim);margin-top:22px;}
+    .google-badge b{color:var(--ink);}
+
+    /* Final CTA */
+    .final-cta{background:linear-gradient(150deg,#123522,var(--bg-2) 70%);border:1px solid rgba(110,231,160,.22);border-radius:26px;padding:44px 26px;text-align:center;position:relative;overflow:hidden;}
+    @media(min-width:768px){.final-cta{padding:64px 48px;}}
+    .final-cta::before{content:'';position:absolute;top:-70px;right:-70px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.22),transparent 70%);}
+    .final-cta h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(1.75rem,6vw,2.7rem);line-height:1.12;letter-spacing:-.01em;max-width:17em;margin:0 auto;}
+    .final-cta h2 .ital{font-style:italic;color:var(--mint);}
+    .final-cta p{color:var(--ink-dim);margin:16px auto 26px;max-width:32em;font-size:.95rem;}
+    .btn-primary{display:inline-block;text-decoration:none;font-size:1.05rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:14px;padding:17px 34px;box-shadow:0 12px 30px -8px rgba(22,163,74,.55);transition:transform .12s,box-shadow .15s;}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 16px 34px -8px rgba(22,163,74,.62);}
+    .final-note{font-size:.76rem;color:var(--ink-faint);margin-top:14px;}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:34px 0 110px;margin-top:20px;}
+    @media(min-width:768px){footer{padding-bottom:44px;}}
+    .footer-row{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between;font-size:.78rem;color:var(--ink-faint);}
+    .footer-links{display:flex;gap:20px;}
+    .footer-links a{color:var(--ink-dim);text-decoration:none;}
+    .footer-links a:hover{color:var(--ink);}
+    .footer-note{font-size:.7rem;color:var(--ink-faint);margin-top:16px;max-width:52em;}
+
+    /* Sticky CTA */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(10,23,16,.82);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s ease;}
+    .sticky-cta.visible{transform:none;}
+    .sticky-cta a{display:block;text-align:center;text-decoration:none;font-size:1rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:13px;padding:15px;box-shadow:0 10px 24px -8px rgba(22,163,74,.55);}
+    @media(min-width:1024px){.sticky-cta{display:none;}}
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOPBAR ===== -->
+  <header class="topbar">
+    <div class="container">
+      <img src="assets/logo-white.png" alt="GreenCareers" width="120" height="40" style="height:40px;width:auto;">
+      <div class="topbar-trust"><span class="stars">★★★★★</span> 4,9 auf Google</div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-bg">
+      <picture>
+        <source media="(min-width: 768px)" srcset="assets/hero-desktop.jpg">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" decoding="async">
+      </picture>
+    </div>
+    <div class="container">
+      <div class="hero-copy">
+        <span class="hero-badge"><span class="dot"></span> Für GaLaBau-Betriebe mit 15–100 Mitarbeitern</span>
+        <h1>Schluss mit Hoffen. <span class="ital">Fachkräfte mit System.</span></h1>
+        <p class="hero-sub">Welche <b>5 Kanäle</b> 2026 wirklich Bewerber liefern, was eine Einstellung <b>pro Kanal kostet</b> – und wie Betriebe Ihrer Größe Stellen <b>in unter 45 Tagen</b> besetzen.</p>
+        <div class="trust-strip in-copy">
+          <span class="trust-item"><span class="stars">★★★★★</span> <b>4,9</b> auf Google</span>
+          <span class="trust-item"><b>500+</b>&nbsp;GaLaBau-Betriebe</span>
+          <span class="trust-item"><b>30.000+</b>&nbsp;Fachkräfte</span>
+        </div>
+      </div>
+
+      <!-- ===== QUIZ CARD ===== -->
+      <div class="quiz-card" id="quiz">
+        <div class="quiz-head">
+          <img class="quiz-head-cover" src="assets/report-cover-thumb.jpg" alt="Recruiting-Report 2026 Cover" width="52" height="74">
+          <div class="quiz-head-titles">
+            <div class="t1">Recruiting-Report 2026</div>
+            <div class="t2">32 Seiten · PDF · Sofort-Zugriff</div>
+          </div>
+          <span class="quiz-tag">GRATIS</span>
+        </div>
+
+        <div class="quiz-progress" id="quiz-progress">
+          <div class="quiz-progress-top">
+            <span id="quiz-progress-label">Schritt 1 von 5</span>
+            <span id="quiz-progress-time">≈ 45 Sek. übrig</span>
+          </div>
+          <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+        </div>
+
+        <form id="lead-form" onsubmit="return false;">
+          <!-- STEP 1 — Position -->
+          <div class="quiz-slide is-active" data-slide="1">
+            <h3 class="quiz-question">Welche Position suchen Sie aktuell?</h3>
+            <p class="quiz-subtext">Ein Klick – dann sehen Sie, welche Benchmarks für Sie relevant sind.</p>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option" data-field="position" data-value="facharbeiter">Facharbeiter / Landschaftsgärtner</button>
+              <button type="button" class="quiz-option" data-field="position" data-value="vorarbeiter">Vorarbeiter / Polier</button>
+              <button type="button" class="quiz-option" data-field="position" data-value="bauleiter">Bauleiter</button>
+              <button type="button" class="quiz-option" data-field="position" data-value="mehrere">Mehrere Positionen gleichzeitig</button>
+            </div>
+            <div class="quiz-trustline">
+              <span>⏱ 5 kurze Schritte, unter 60 Sek.</span>
+              <span>🔒 DSGVO-konform</span>
+            </div>
+          </div>
+
+          <!-- STEP 2 — Betriebsgröße -->
+          <div class="quiz-slide" data-slide="2">
+            <h3 class="quiz-question">Wie viele Mitarbeiter beschäftigt Ihr Betrieb?</h3>
+            <p class="quiz-subtext">Für Strategie-Empfehlungen, die zu Ihrer Betriebsgröße passen.</p>
+            <div class="quiz-options">
+              <button type="button" class="quiz-option" data-field="mitarbeiter_range" data-value="unter-15">Unter 15 Mitarbeiter</button>
+              <button type="button" class="quiz-option" data-field="mitarbeiter_range" data-value="15-30">15–30 Mitarbeiter</button>
+              <button type="button" class="quiz-option" data-field="mitarbeiter_range" data-value="31-60">31–60 Mitarbeiter</button>
+              <button type="button" class="quiz-option" data-field="mitarbeiter_range" data-value="61-100">61–100 Mitarbeiter</button>
+              <button type="button" class="quiz-option" data-field="mitarbeiter_range" data-value="ueber-100">Über 100 Mitarbeiter</button>
+            </div>
+            <button type="button" class="quiz-back" data-back="1">← Zurück</button>
+          </div>
+
+          <!-- STEP 3 — E-Mail -->
+          <div class="quiz-slide" data-slide="3">
+            <div class="quiz-confirm" id="quiz-confirm"></div>
+            <h3 class="quiz-question">Wohin dürfen wir Ihre PDF-Kopie senden?</h3>
+            <p class="quiz-subtext"><b>Der Report öffnet sich direkt nach dem letzten Schritt</b> – die PDF-Kopie kommt zusätzlich in Ihr Postfach.</p>
+            <div class="quiz-input-group">
+              <label class="quiz-label" for="email">Geschäftliche E-Mail</label>
+              <input type="email" class="quiz-input" id="email" name="email" placeholder="ihre@firma.de" autocomplete="email" autocapitalize="none" spellcheck="false" inputmode="email">
+            </div>
+            <button type="button" class="quiz-cta" data-next-from="3">Weiter →</button>
+            <div class="quiz-error" id="quiz-step3-error">Bitte tragen Sie eine gültige E-Mail-Adresse ein.</div>
+            <button type="button" class="quiz-back" data-back="2">← Zurück</button>
+            <div class="quiz-trustline"><span>🔒 Keine Weitergabe an Dritte, jederzeit abbestellbar.</span></div>
+          </div>
+
+          <!-- STEP 4 — Name + Firma -->
+          <div class="quiz-slide" data-slide="4">
+            <h3 class="quiz-question">An wen adressieren wir den Report?</h3>
+            <p class="quiz-subtext">Fast geschafft – noch zwei Angaben.</p>
+            <div class="quiz-input-group">
+              <label class="quiz-label" for="fullname">Vor- und Nachname</label>
+              <input type="text" class="quiz-input" id="fullname" name="fullname" placeholder="z. B. Max Müller" autocomplete="name" autocapitalize="words" spellcheck="false">
+            </div>
+            <div class="quiz-input-group">
+              <label class="quiz-label" for="unternehmen">Firmenname</label>
+              <input type="text" class="quiz-input" id="unternehmen" name="unternehmen" placeholder="z. B. Müller GaLaBau GmbH" autocomplete="organization" autocapitalize="words" spellcheck="false">
+            </div>
+            <button type="button" class="quiz-cta" id="quiz-step4-cta" data-next-from="4">Weiter →</button>
+            <div class="quiz-error" id="quiz-step4-error">Bitte tragen Sie Vor-, Nachnamen und Firmennamen ein.</div>
+            <button type="button" class="quiz-back" data-back="3">← Zurück</button>
+          </div>
+
+          <!-- STEP 5 — Handynummer (WhatsApp-Versand) + Datenschutz -->
+          <div class="quiz-slide" data-slide="5">
+            <h3 class="quiz-question">Wohin dürfen wir den Report per WhatsApp senden?</h3>
+            <p class="quiz-subtext">Die meisten Inhaber lesen den Report unterwegs – <b>per WhatsApp haben Sie ihn direkt auf dem Handy</b>, zusätzlich zur E-Mail-Kopie.</p>
+            <div class="quiz-input-group">
+              <label class="quiz-label" for="phone">Ihre Handynummer</label>
+              <div class="phone-row">
+                <select class="phone-prefix" id="phone-country" aria-label="Ländervorwahl">
+                  <option value="49" selected>DE +49</option>
+                  <option value="43">AT +43</option>
+                  <option value="41">CH +41</option>
+                  <option value="352">LU +352</option>
+                  <option value="33">FR +33</option>
+                  <option value="31">NL +31</option>
+                  <option value="32">BE +32</option>
+                  <option value="48">PL +48</option>
+                </select>
+                <input type="tel" class="quiz-input" id="phone" name="phone" placeholder="170 1234567" autocomplete="tel" inputmode="tel">
+              </div>
+            </div>
+            <label class="quiz-privacy">
+              <input type="checkbox" id="privacy" name="privacy">
+              <span>Ich stimme der <a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu und bin einverstanden, von GreenCareers kontaktiert zu werden.</span>
+            </label>
+            <button type="button" class="quiz-cta" id="quiz-final-submit" disabled>Report freischalten →</button>
+            <div class="quiz-error" id="quiz-step5-error">Bitte Handynummer eintragen und Datenschutz bestätigen.</div>
+            <button type="button" class="quiz-back" data-back="4">← Zurück</button>
+            <div class="quiz-trustline"><span>🔒 Kein Spam · Versand als PDF · DSGVO-konform</span></div>
+          </div>
+        </form>
+
+        <!-- SUCCESS -->
+        <div class="quiz-success" id="form-success">
+          <div class="success-check">✓</div>
+          <h3>Freigeschaltet.</h3>
+          <p>Ihr Recruiting-Report 2026 ist bereit – viel Erfolg bei der nächsten Einstellung.</p>
+          <a class="success-open" id="report-open" href="assets/recruiting-report-2026.pdf" target="_blank" rel="noopener">Report jetzt öffnen (PDF, 32 Seiten) →</a>
+          <p class="success-mailnote">Ihre Kopie ist außerdem per <b>WhatsApp und E-Mail</b> unterwegs – so haben Sie den Report auch unterwegs griffbereit.</p>
+        </div>
+      </div>
+
+      <div class="trust-strip under-card">
+        <span class="trust-item"><span class="stars">★★★★★</span> <b>4,9</b> auf Google</span>
+        <span class="trust-item"><b>500+</b>&nbsp;Betriebe</span>
+        <span class="trust-item"><b>30.000+</b>&nbsp;Fachkräfte</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOGOS ===== -->
+  <div class="logos">
+    <div class="logos-label">Diese Betriebe vertrauen GreenCareers</div>
+    <div class="marquee">
+      <div class="marquee-track" id="marquee-track">
+        <div class="logo-chip"><img src="assets/logos/hugenschmidt.png" alt="Hugenschmidt Gartenbau" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/falz.png" alt="Gartenbau Falz" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/jensen.png" alt="Jensen Landschaftsarchitekten" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/epp.png" alt="EPP Gartenbau" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/huben.png" alt="Huben" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/feth.png" alt="Florian Feth Gartengestaltung" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/bechstein.png" alt="Bechstein" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/hiedl.png" alt="Hiedl" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/jakober.png" alt="Jakober" loading="lazy"></div>
+        <div class="logo-chip"><img src="assets/logos/vogt.png" alt="Vogt" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BLICK IN DEN REPORT ===== -->
+  <section id="einblick">
+    <div class="container">
+      <div class="section-label reveal">Blick in den Report</div>
+      <h2 class="section-title reveal">Sehen Sie selbst, <em class="accent">was drin steckt.</em></h2>
+      <p class="section-sub reveal">Drei Original-Seiten aus dem Report – damit Sie vorher wissen, was Sie bekommen.</p>
+
+      <div class="preview-scroll reveal">
+        <div class="preview-card">
+          <div class="preview-frame"><img src="assets/report-page-05.jpg" alt="Report-Seite 5: Drei Zahlen, die alles erklären" loading="lazy" decoding="async"></div>
+          <div class="preview-meta"><span class="preview-page">S. 5</span><span class="preview-caption">Drei Zahlen, die alles erklären – die Ausgangslage, mit der jeder Betrieb 2026 rechnen muss.</span></div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-frame"><img src="assets/report-page-13.jpg" alt="Report-Seite 13: Effektivität vs. Aufwand Matrix" loading="lazy" decoding="async"></div>
+          <div class="preview-meta"><span class="preview-page">S. 13</span><span class="preview-caption">Die Matrix: alle 5 Kanäle nach Passung und Aufwand. Welche zwei gewinnen, steht im Report.</span></div>
+        </div>
+        <div class="preview-card">
+          <div class="preview-frame"><img src="assets/report-page-27.jpg" alt="Report-Seite 27: Kennzahlen-Dashboard" loading="lazy" decoding="async"></div>
+          <div class="preview-meta"><span class="preview-page">S. 27</span><span class="preview-caption">Fünf Kennzahlen statt 30 Metriken – die Vorlage, mit der Sie sofort starten können.</span></div>
+        </div>
+      </div>
+      <div class="preview-hint">← Wischen für mehr →</div>
+
+      <div class="chapters reveal">
+        <div class="chapter"><span class="chapter-num">01</span><div class="chapter-body"><b>Status Quo: Der strukturelle Fachkräftemangel</b><span>Drei Zahlen, die alles erklären – und warum der GaLaBau besonders betroffen ist.</span></div><span class="chapter-page">ab S. 4</span></div>
+        <div class="chapter"><span class="chapter-num">02</span><div class="chapter-body"><b>Die 5 wirksamsten Recruiting-Kanäle</b><span>Das Ranking aus 540 Beratungsgesprächen – inklusive des Kanals, den fast alle überschätzen.</span></div><span class="chapter-page">ab S. 9</span></div>
+        <div class="chapter"><span class="chapter-num">03</span><div class="chapter-body"><b>Kosten pro Einstellung</b><span>Die Vollkosten-Rechnung, die kaum ein Betrieb macht – inkl. Vakanzkosten.</span></div><span class="chapter-page">ab S. 15</span></div>
+        <div class="chapter"><span class="chapter-num">04</span><div class="chapter-body"><b>Arbeitgebermarke: 7 Stellschrauben</b><span>Was 80 % Wirkung in 30 Tagen bringt – ohne Agentur.</span></div><span class="chapter-page">ab S. 20</span></div>
+        <div class="chapter"><span class="chapter-num">05</span><div class="chapter-body"><b>KI im Recruiting</b><span>Drei sinnvolle Anwendungen – und drei Versprechen, denen Sie nicht glauben sollten.</span></div><span class="chapter-page">ab S. 23</span></div>
+        <div class="chapter"><span class="chapter-num">06</span><div class="chapter-body"><b>Ihre Kennzahlen-Roadmap</b><span>Fünf Kennzahlen statt 30 Metriken – mit Vorlage zum sofort Loslegen.</span></div><span class="chapter-page">ab S. 26</span></div>
+        <div class="chapter"><span class="chapter-num">07</span><div class="chapter-body"><b>Praxisbeispiele aus dem Mittelstand</b><span>Drei Betriebe, drei Erfolge – plus Ihr 3-Stufen-Plan für 2026.</span></div><span class="chapter-page">ab S. 29</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ZAHLEN ===== -->
+  <section id="zahlen" style="padding-top:20px;">
+    <div class="container">
+      <div class="section-label reveal">Warum jetzt</div>
+      <h2 class="section-title reveal">Drei Zahlen, die 2026 <em class="accent">den Unterschied machen.</em></h2>
+      <div class="numbers-grid">
+        <div class="number-card reveal">
+          <div class="number-big">224 Tage</div>
+          <div class="number-label">bleibt eine Handwerks-Stelle im Schnitt unbesetzt</div>
+          <p class="number-desc">Wer heute ausschreibt, besetzt ohne System erst in über 7 Monaten.</p>
+          <span class="number-link">→ Kapitel 2 zeigt die schnelleren Wege</span>
+        </div>
+        <div class="number-card reveal">
+          <div class="number-big">49.500 €</div>
+          <div class="number-label">kostet eine unbesetzte Fachkraft-Stelle pro Jahr</div>
+          <p class="number-desc">Entgangene Aufträge, Überstunden, Produktivitätsverlust – die stille Rechnung.</p>
+          <span class="number-link">→ Kapitel 3 rechnet es ehrlich vor</span>
+        </div>
+        <div class="number-card reveal">
+          <div class="number-big">&gt; 500 %</div>
+          <div class="number-label">ROI einer Einstellung über den richtigen Kanal – im ersten Jahr</div>
+          <p class="number-desc">Jede besetzte Fachkraft-Stelle erwirtschaftet ein Vielfaches ihrer Recruiting-Kosten. Der Report zeigt die Rechnung – und den Weg dahin.</p>
+          <span class="number-link">→ Kapitel 3: die Vollkosten-Rechnung</span>
+        </div>
+      </div>
+      <p class="numbers-src reveal">Quellen: Bundesagentur für Arbeit, StepStone/BA-Auswertung 2023–2024; GreenCareers-Auswertung aus 540 Beratungsgesprächen (Q1 2026). Alle Details und Berechnungen im Report.</p>
+    </div>
+  </section>
+
+  <!-- ===== NETZWERK-MAP ===== -->
+  <section id="netzwerk" style="padding-top:20px;">
+    <div class="container">
+      <div class="network-grid">
+        <div>
+          <div class="section-label reveal">Die Datenbasis hinter dem Report</div>
+          <h2 class="section-title reveal">30.000+ Fachkräfte, <em class="accent">live im DACH-Raum.</em></h2>
+          <p class="section-sub reveal">Jeden Tag kommen im GreenCareers-Netzwerk neue Bewerbungen, Wechselwünsche und Einstellungen zusammen. Der Report macht daraus Benchmarks, mit denen Sie Ihre nächste Einstellung planen können – konkret für Betriebe Ihrer Größe.</p>
+          <div class="network-stats reveal">
+            <div class="network-stat"><b>30.000+</b><span>Fachkräfte im Netzwerk</span></div>
+            <div class="network-stat"><b>500+</b><span>GaLaBau-Betriebe</span></div>
+            <div class="network-stat"><b>900+</b><span>Platzierungen</span></div>
+          </div>
+        </div>
+        <div class="network-map reveal">
+          <svg viewBox="0 0 460 540" role="img" aria-label="Karte von Deutschland, Österreich und der Schweiz mit aktiven Fachkräfte-Standorten">
+            <path class="country" d="M156.6 17.6 157.2 39.2 193.0 52.1 192.6 71.9 228.6 61.4 248.5 46.2 288.5 68.2 305.2 85.9 313.5 114.2 303.6 129.1 316.5 148.9 325.2 178.7 322.5 197.9 337.0 233.4 321.2 239.3 311.9 232.9 303.0 243.4 277.6 254.2 264.4 268.1 238.7 280.2 244.9 296.8 248.6 320.2 266.7 333.6 286.7 357.6 274.2 383.2 261.5 390.3 266.5 426.6 263.2 436.0 252.1 424.6 235.2 422.9 209.9 432.9 178.6 430.5 173.6 445.2 155.7 429.8 145.0 432.8 107.0 415.8 99.8 427.9 69.6 427.5 74.1 387.9 92.0 349.7 41.0 339.5 24.3 324.9 26.3 300.5 19.2 287.9 23.3 250.3 17.3 192.0 38.6 191.9 47.6 171.0 56.4 120.0 49.8 101.2 56.7 89.4 86.3 86.4 92.8 98.7 116.9 71.2 108.8 50.3 107.2 18.8 133.9 26.1 156.6 17.6Z"/>
+            <path class="country" d="M406.5 399.5 403.8 422.3 383.9 422.4 390.7 434.4 379.0 470.3 372.2 479.7 341.3 481.1 323.4 493.7 294.1 489.4 243.5 475.0 235.6 455.6 200.6 465.3 196.5 475.9 175.0 468.0 157.0 466.5 140.9 456.3 146.3 442.7 145.0 432.8 155.7 429.8 173.6 445.2 178.6 430.5 209.9 432.9 235.2 422.9 252.1 424.6 263.2 436.0 266.5 426.6 261.5 390.3 274.2 383.2 286.7 357.6 313.0 375.5 332.9 352.7 345.4 348.5 372.9 365.5 389.5 362.6 405.8 373.2 403.0 380.2 406.5 399.5Z"/>
+            <path class="country" d="M145.0 432.8 146.3 442.7 140.9 456.3 157.0 466.5 175.0 468.0 172.2 490.8 156.6 500.2 130.4 493.2 122.7 515.7 105.9 517.4 99.7 508.6 79.9 527.5 62.8 530.1 47.6 518.2 35.4 493.8 18.5 502.5 19.0 477.3 44.9 446.0 43.8 431.9 59.9 437.0 69.6 427.5 99.8 427.9 107.0 415.8 145.0 432.8Z"/>
+            <g>
+              <circle class="city-ring" cx="159" cy="97.4" r="7" style="animation-delay:0s"/><circle class="city-dot" cx="159" cy="97.4" r="4.5"/><circle class="city-core" cx="159" cy="97.4" r="1.6"/>
+              <circle class="city-ring" cx="279.7" cy="154.8" r="7" style="animation-delay:.5s"/><circle class="city-dot" cx="279.7" cy="154.8" r="4.5"/><circle class="city-core" cx="279.7" cy="154.8" r="1.6"/>
+              <circle class="city-ring" cx="51.7" cy="242.7" r="7" style="animation-delay:1s"/><circle class="city-dot" cx="51.7" cy="242.7" r="4.5"/><circle class="city-core" cx="51.7" cy="242.7" r="1.6"/>
+              <circle class="city-ring" cx="149.8" cy="163.1" r="7" style="animation-delay:1.5s"/><circle class="city-dot" cx="149.8" cy="163.1" r="4.5"/><circle class="city-core" cx="149.8" cy="163.1" r="1.6"/>
+              <circle class="city-ring" cx="112.6" cy="288.9" r="7" style="animation-delay:2s"/><circle class="city-dot" cx="112.6" cy="288.9" r="4.5"/><circle class="city-core" cx="112.6" cy="288.9" r="1.6"/>
+              <circle class="city-ring" cx="130.3" cy="363" r="7" style="animation-delay:.8s"/><circle class="city-dot" cx="130.3" cy="363" r="4.5"/><circle class="city-core" cx="130.3" cy="363" r="1.6"/>
+              <circle class="city-ring" cx="215.3" cy="398.6" r="7" style="animation-delay:1.8s"/><circle class="city-dot" cx="215.3" cy="398.6" r="4.5"/><circle class="city-core" cx="215.3" cy="398.6" r="1.6"/>
+              <circle class="city-ring" cx="291.8" cy="236.6" r="7" style="animation-delay:2.4s"/><circle class="city-dot" cx="291.8" cy="236.6" r="4.5"/><circle class="city-core" cx="291.8" cy="236.6" r="1.6"/>
+              <circle class="city-ring" cx="197.6" cy="325.7" r="7" style="animation-delay:.3s"/><circle class="city-dot" cx="197.6" cy="325.7" r="4.5"/><circle class="city-core" cx="197.6" cy="325.7" r="1.6"/>
+              <circle class="city-ring" cx="384.9" cy="394.7" r="7" style="animation-delay:1.2s"/><circle class="city-dot" cx="384.9" cy="394.7" r="4.5"/><circle class="city-core" cx="384.9" cy="394.7" r="1.6"/>
+              <circle class="city-ring" cx="107.6" cy="441.5" r="7" style="animation-delay:2.1s"/><circle class="city-dot" cx="107.6" cy="441.5" r="4.5"/><circle class="city-core" cx="107.6" cy="441.5" r="1.6"/>
+              <circle class="city-ring" cx="75.4" cy="185.9" r="7" style="animation-delay:1.6s"/><circle class="city-dot" cx="75.4" cy="185.9" r="4.5"/><circle class="city-core" cx="75.4" cy="185.9" r="1.6"/>
+              <circle class="city-ring" cx="352" cy="458.2" r="7" style="animation-delay:2.7s"/><circle class="city-dot" cx="352" cy="458.2" r="4.5"/><circle class="city-core" cx="352" cy="458.2" r="1.6"/>
+              <circle class="city-ring" cx="69.1" cy="464.8" r="7" style="animation-delay:.9s"/><circle class="city-dot" cx="69.1" cy="464.8" r="4.5"/><circle class="city-core" cx="69.1" cy="464.8" r="1.6"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FÜR BETRIEBE WIE IHREN ===== -->
+  <section id="zielgruppe" style="padding-top:20px;">
+    <div class="container">
+      <div class="audience-card reveal">
+        <div class="audience-img"><img src="assets/team-galabau.jpg" alt="GaLaBau-Inhaber mit seinem Team auf der Baustelle" loading="lazy" decoding="async"></div>
+        <div class="audience-copy">
+          <div class="section-label">Für wen dieser Report ist</div>
+          <h2 class="section-title" style="font-size:clamp(1.5rem,4.6vw,2.1rem);">Geschrieben für Betriebe <em class="accent">wie Ihren.</em></h2>
+          <p style="color:var(--ink-dim);font-size:.95rem;margin-top:12px;">Sie führen 15 bis 100 Leute, die Auftragsbücher sind voll – und jede unbesetzte Stelle bremst das Wachstum. Genau mit diesen Betrieben haben wir die 540 Gespräche geführt, aus denen dieser Report entstanden ist.</p>
+          <ul class="audience-list">
+            <li>Inhaber &amp; Geschäftsführer im GaLaBau</li>
+            <li>15–100 Mitarbeiter, wachstumsorientiert</li>
+            <li>Bereit, Mitarbeitergewinnung wie eine Baustelle zu planen: mit Zahlen statt Bauchgefühl</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="stimmen" style="padding-top:20px;">
+    <div class="container">
+      <div class="section-label reveal">Wer hinter dem Report steht</div>
+      <h2 class="section-title reveal">Das sagen GaLaBau-Inhaber <em class="accent">über die Zusammenarbeit.</em></h2>
+      <p class="section-sub reveal">GreenCareers wertet als spezialisiertes Karrierenetzwerk laufend Recruiting-Daten aus der grünen Branche aus – daraus entsteht dieser Report.</p>
+      <div class="testi-grid">
+        <div class="testi reveal">
+          <div class="testi-result">20+ Bewerber auf eine Stelle</div>
+          <span class="stars">★★★★★</span>
+          <p>„Nach kurzer Zeit hatte ich mehr als 20 Bewerber auf meine ausgeschriebene Stelle im Garten- und Landschaftsbau. Ich kann GreenCareers jedem Arbeitgeber und Arbeitnehmer nur empfehlen."</p>
+          <div class="testi-foot"><span class="testi-avatar">TK</span><div><div class="testi-name">Tobias Knauf</div><div class="testi-verified">✓ Verifizierte Google-Bewertung</div></div></div>
+        </div>
+        <div class="testi reveal">
+          <div class="testi-result">2 Vorarbeiter in 6 Wochen</div>
+          <span class="stars">★★★★★</span>
+          <p>„Endlich ein Anbieter, der unsere Branche versteht. Kein Agentur-Geschwätz, keine leeren Versprechen – sondern passende Fachkräfte. Wir haben in 6 Wochen zwei Vorarbeiter eingestellt."</p>
+          <div class="testi-foot"><span class="testi-avatar">SK</span><div><div class="testi-name">Stefan Köhler</div><div class="testi-verified">✓ Verifizierte Google-Bewertung</div></div></div>
+        </div>
+        <div class="testi reveal">
+          <div class="testi-result">Mehrere Bewerber pro Tag</div>
+          <span class="stars">★★★★★</span>
+          <p>„Unkomplizierte Plattform, bei der es einen guten Rücklauf von mehreren Bewerbern pro Tag gegeben hat. Eine gute, offene Kommunikation erleichtert die Zusammenarbeit!"</p>
+          <div class="testi-foot"><span class="testi-avatar">BD</span><div><div class="testi-name">Boas Diehl</div><div class="testi-verified">✓ Verifizierte Google-Bewertung</div></div></div>
+        </div>
+      </div>
+      <div style="text-align:center;"><span class="google-badge reveal">Google <b>4,9 / 5</b> <span style="color:#FBBF24;letter-spacing:1px;">★★★★★</span> · 500+ Betriebe · 900+ Platzierungen</span></div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section id="abschluss" style="padding-top:10px;">
+    <div class="container">
+      <div class="final-cta reveal">
+        <h2>Ihre nächste Einstellung – <span class="ital">planbar statt Zufall.</span></h2>
+        <p>Holen Sie sich die Benchmarks, Vollkosten-Rechnungen und Vorlagen, mit denen GaLaBau-Betriebe ihre Stellen in unter 45 Tagen besetzen.</p>
+        <a class="btn-primary" href="#quiz" data-scroll-quiz>Gratis-Report sichern →</a>
+        <div class="final-note">32 Seiten · PDF · Sofort-Zugriff · Keine Verpflichtung</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <span>© 2026 GreenCareers – Die Karriereplattform für die grüne Branche.</span>
+        <div class="footer-links">
+          <a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+          <a href="https://www.green-careers.de/impressum" target="_blank" rel="noopener">Impressum</a>
+          <a href="https://www.green-careers.de/agb" target="_blank" rel="noopener">AGB</a>
+        </div>
+      </div>
+      <p class="footer-note">Kennzahlen basieren auf öffentlich verfügbaren Statistiken (Bundesagentur für Arbeit, StepStone, Destatis, BGL) sowie eigenen Auswertungen. Made with ♥ in Germany für den GaLaBau.</p>
+    </div>
+  </footer>
+
+  <!-- ===== STICKY CTA (mobile) ===== -->
+  <div class="sticky-cta" id="sticky-cta"><a href="#quiz" data-scroll-quiz id="sticky-cta-link">Gratis-Report ansehen →</a></div>
+
+  <script>
+  (function(){
+    'use strict';
+
+    /* =====================================================
+       KONFIGURATION
+       ===================================================== */
+    var LANDINGPAGE_ID = 'recruiting-report-2026-v2';
+    var MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/mdo1rtmmdowtkjq2ubq0od6ilifu8unv';
+    var FUNNEL_EVENT_ENDPOINT = 'https://gc-tracking-dashboard.vercel.app/api/recruiting/funnel-event';
+    var LEAD_EVENT_ENDPOINT = 'https://gc-tracking-dashboard.vercel.app/api/tracking/lead-event';
+    var META_PIXEL_ID = '634469765867935';
+    var CLARITY_PROJECT_ID = ''; // Microsoft-Clarity-Projekt-ID eintragen → Heatmaps/Recordings aktiv
+
+    // Live nur auf *.green-careers.de — auf der Vercel-Test-URL werden
+    // weder Pixel noch Webhook noch Tracking-Endpoints angesprochen.
+    var IS_LIVE = /(^|\.)green-careers\.de$/.test(location.hostname);
+
+    /* =====================================================
+       PIXEL + CLARITY (nur live)
+       ===================================================== */
+    if (IS_LIVE) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', META_PIXEL_ID);
+      fbq('track', 'PageView');
+      if (CLARITY_PROJECT_ID) {
+        (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", CLARITY_PROJECT_ID);
+      }
+    } else {
+      console.info('[GC Preview] Test-Modus: Tracking, Pixel und Webhook sind deaktiviert (Hostname ist nicht green-careers.de).');
+    }
+
+    /* =====================================================
+       HELPERS
+       ===================================================== */
+    function uuidv4(){
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+        var r=Math.random()*16|0,v=c==='x'?r:(r&3|8);return v.toString(16);});
+    }
+    var sessionId = (function(){
+      try {
+        var s = sessionStorage.getItem('gc_session_id');
+        if (!s) { s = uuidv4(); sessionStorage.setItem('gc_session_id', s); }
+        return s;
+      } catch(e){ return uuidv4(); }
+    })();
+
+    var trackingParams = (function(){
+      var out = {};
+      try {
+        var p = new URLSearchParams(location.search);
+        ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(function(k){
+          var v = p.get(k);
+          if (v) out[k] = v;
+        });
+      } catch(e){}
+      return out;
+    })();
+
+    function getCookie(name){
+      try {
+        var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+        return m ? decodeURIComponent(m.pop()) : '';
+      } catch(e){ return ''; }
+    }
+    function getFbp(){ return getCookie('_fbp'); }
+    function getFbc(){
+      var c = getCookie('_fbc');
+      if (c) return c;
+      if (trackingParams.fbclid) return 'fb.1.' + Date.now() + '.' + trackingParams.fbclid;
+      return '';
+    }
+
+    // Stabile event_id pro Stufe + Session (übersteht Reload → Meta dedupliziert)
+    function getEventId(stage){
+      var key = 'gc_eid_' + stage + '_' + LANDINGPAGE_ID;
+      try {
+        var id = localStorage.getItem(key);
+        if (!id) { id = uuidv4(); localStorage.setItem(key, id); }
+        return id;
+      } catch(e){ return uuidv4(); }
+    }
+
+    /* =====================================================
+       TRACKING (identischer Vertrag wie recruiting-report-2026)
+       ===================================================== */
+    function trackFunnelEvent(eventType, slideId){
+      var body = Object.assign({
+        event_type: eventType,
+        slide_id: slideId,
+        landingpage_id: LANDINGPAGE_ID,
+        session_id: sessionId,
+        referrer: document.referrer || '',
+        page_url: location.href,
+        user_agent: navigator.userAgent
+      }, trackingParams);
+      if (!IS_LIVE) { console.info('[GC Preview] funnel-event:', eventType, slideId || ''); return; }
+      try {
+        fetch(FUNNEL_EVENT_ENDPOINT, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(body), keepalive:true, credentials:'omit'
+        }).catch(function(){});
+      } catch(e){}
+    }
+
+    function trackPixelEvent(name, params){
+      if (!IS_LIVE) { console.info('[GC Preview] pixel:', name, params || {}); return; }
+      try { if (typeof fbq === 'function') fbq('trackCustom', name, params || {}); } catch(e){}
+    }
+
+    function sendLeadStageEvent(stage, eventId){
+      var body = Object.assign({
+        stage: stage,
+        event_id: eventId,
+        landingpage_id: LANDINGPAGE_ID,
+        session_id: sessionId,
+        email: answers.email,
+        vorname: answers.vorname || '',
+        nachname: answers.nachname || '',
+        unternehmen: answers.unternehmen || '',
+        phone: answers.phone || '',
+        position: answers.position || '',
+        mitarbeiter_range: answers.mitarbeiter_range || '',
+        fbp: getFbp(),
+        fbc: getFbc(),
+        page_url: location.href,
+        referrer: document.referrer || '',
+        user_agent: navigator.userAgent
+      }, trackingParams);
+      try {
+        var p = new URLSearchParams(location.search);
+        if (p.get('tracking_debug') === '1') body.dry_run = true;
+        if (p.get('test_capi')) body.test_event_code = p.get('test_capi');
+      } catch(e){}
+      if (!IS_LIVE) { console.info('[GC Preview] lead-event:', stage, body); return; }
+      try {
+        fetch(LEAD_EVENT_ENDPOINT, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(body), keepalive:true, credentials:'omit'
+        }).catch(function(){});
+      } catch(e){}
+    }
+
+    /* =====================================================
+       QUIZ
+       ===================================================== */
+    var answers = { position:'', mitarbeiter_range:'', email:'', vorname:'', nachname:'', unternehmen:'', phone:'' };
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.quiz-slide'));
+    var progress = document.getElementById('quiz-progress');
+    var progressFill = document.getElementById('quiz-progress-fill');
+    var progressLabel = document.getElementById('quiz-progress-label');
+    var progressTime = document.getElementById('quiz-progress-time');
+    var quizCard = document.getElementById('quiz');
+    var quizStarted = false;
+    var TIME_LEFT = {1:'≈ 60 Sek.',2:'≈ 45 Sek.',3:'≈ 30 Sek.',4:'≈ 20 Sek.',5:'≈ 10 Sek.'};
+
+    var POSITION_LABELS = { facharbeiter:'Facharbeiter / Landschaftsgärtner', vorarbeiter:'einen Vorarbeiter / Polier', bauleiter:'einen Bauleiter', mehrere:'mehrere Positionen gleichzeitig' };
+    var RANGE_LABELS = { 'unter-15':'unter 15', '15-30':'15–30', '31-60':'31–60', '61-100':'61–100', 'ueber-100':'über 100' };
+
+    function updateConfirmPill(){
+      var el = document.getElementById('quiz-confirm');
+      if (!el) return;
+      if (answers.position && answers.mitarbeiter_range) {
+        el.innerHTML = '✓ Passt: Für Betriebe mit <b>' + RANGE_LABELS[answers.mitarbeiter_range] + ' Mitarbeitern</b>, die <b>' + POSITION_LABELS[answers.position] + '</b> suchen, enthält der Report eigene Benchmarks und Kostenrechnungen.';
+        el.classList.add('visible');
+      }
+    }
+
+    function showSlide(n){
+      if (n === 3) updateConfirmPill();
+      slides.forEach(function(s){ s.classList.toggle('is-active', s.dataset.slide === String(n)); });
+      if (n > 1) {
+        progress.classList.add('visible');
+        progressLabel.textContent = 'Schritt ' + n + ' von 5';
+        progressTime.textContent = TIME_LEFT[n] + ' übrig';
+        progressFill.style.width = (n/5*100) + '%';
+      } else {
+        progress.classList.remove('visible');
+      }
+      trackFunnelEvent('slide_view', String(n));
+      trackPixelEvent('Quiz_Step_' + n + '_Viewed', { landingpage: LANDINGPAGE_ID });
+      var firstInput = slides[n-1] && slides[n-1].querySelector('.quiz-input');
+      if (firstInput) setTimeout(function(){ firstInput.focus({ preventScroll:true }); }, 250);
+      if (quizCard.getBoundingClientRect().top < 0) quizCard.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+
+    // LP-View + Step 1 sichtbar (Parität zur alten Zählung)
+    trackFunnelEvent('lp_view', null);
+    trackFunnelEvent('slide_view', '1');
+    trackPixelEvent('Quiz_Step_1_Viewed', { landingpage: LANDINGPAGE_ID });
+
+    // Options-Buttons (Step 1 + 2)
+    document.querySelectorAll('.quiz-option').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var field = btn.dataset.field, value = btn.dataset.value;
+        answers[field] = value;
+        btn.parentElement.querySelectorAll('.quiz-option').forEach(function(b){ b.classList.remove('picked'); });
+        btn.classList.add('picked');
+        if (!quizStarted) {
+          quizStarted = true;
+          trackPixelEvent('Quiz_Started', { landingpage: LANDINGPAGE_ID, cta_location: 'quiz_option_' + field });
+        }
+        var next = field === 'position' ? 2 : 3;
+        setTimeout(function(){ showSlide(next); }, 180);
+      });
+    });
+
+    // Zurück-Buttons
+    document.querySelectorAll('.quiz-back').forEach(function(btn){
+      btn.addEventListener('click', function(){ showSlide(parseInt(btn.dataset.back, 10)); });
+    });
+
+    // STEP 3 — E-Mail → Lead-Stufe
+    var emailInput = document.getElementById('email');
+    var step3Error = document.getElementById('quiz-step3-error');
+    var step3CTA = document.querySelector('[data-next-from="3"]');
+    step3CTA.addEventListener('click', function(){
+      var email = emailInput.value.trim();
+      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!valid) { emailInput.classList.add('is-error'); step3Error.classList.add('active'); return; }
+      emailInput.classList.remove('is-error'); step3Error.classList.remove('active');
+      answers.email = email;
+      // Stufe 1 "Lead": E-Mail liegt vor → Pixel + CAPI (gemeinsame event_id),
+      // Lead landet in Supabase (lead_stage=email_only) → Abandoned-Cron/Slack.
+      if (!window.__gcLeadFired) {
+        window.__gcLeadFired = true;
+        var leadEventId = getEventId('lead');
+        if (IS_LIVE) {
+          try {
+            if (typeof fbq === 'function') {
+              fbq('track', 'Lead', { content_name:'Recruiting-Report E-Mail erhalten', landingpage: LANDINGPAGE_ID }, { eventID: leadEventId });
+            }
+          } catch(e){}
+        } else {
+          console.info('[GC Preview] pixel: Lead (eventID ' + leadEventId + ')');
+        }
+        sendLeadStageEvent('lead', leadEventId);
+      }
+      showSlide(4);
+    });
+    emailInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); step3CTA.click(); } });
+
+    // STEP 4 — Name + Firma
+    var fullnameInput = document.getElementById('fullname');
+    var firmaInput = document.getElementById('unternehmen');
+    var step4CTA = document.getElementById('quiz-step4-cta');
+    var step4Error = document.getElementById('quiz-step4-error');
+    step4CTA.addEventListener('click', function(){
+      var parts = fullnameInput.value.trim().split(/\s+/).filter(Boolean);
+      var firma = firmaInput.value.trim();
+      if (parts.length < 2 || firma.length < 2) {
+        if (parts.length < 2) fullnameInput.classList.add('is-error');
+        if (firma.length < 2) firmaInput.classList.add('is-error');
+        step4Error.classList.add('active');
+        return;
+      }
+      step4Error.classList.remove('active');
+      answers.vorname = parts[0];
+      answers.nachname = parts.slice(1).join(' ');
+      answers.unternehmen = firma;
+      showSlide(5);
+    });
+    firmaInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); step4CTA.click(); } });
+
+    // STEP 5 — Telefon + Datenschutz → Submit
+    var phoneInput = document.getElementById('phone');
+    var privacyCheck = document.getElementById('privacy');
+    var finalSubmit = document.getElementById('quiz-final-submit');
+    var step5Error = document.getElementById('quiz-step5-error');
+
+    function evaluateFinalEnabled(){
+      var digits = phoneInput.value.replace(/\D/g,'');
+      finalSubmit.disabled = !(digits.length >= 6 && privacyCheck.checked);
+    }
+    phoneInput.addEventListener('input', evaluateFinalEnabled);
+    privacyCheck.addEventListener('change', evaluateFinalEnabled);
+
+    finalSubmit.addEventListener('click', function(){
+      var digits = phoneInput.value.replace(/\D/g,'');
+      if (digits.length < 6 || !privacyCheck.checked) { step5Error.classList.add('active'); return; }
+      step5Error.classList.remove('active');
+      var cc = document.getElementById('phone-country').value || '49';
+      if (digits.startsWith('00')) digits = digits.slice(2);
+      else if (digits.startsWith('0')) digits = cc + digits.slice(1);
+      else if (!digits.startsWith(cc)) digits = cc + digits;
+      answers.phone = '+' + digits;
+
+      var originalText = finalSubmit.textContent;
+      finalSubmit.textContent = 'Wird freigeschaltet…';
+      finalSubmit.disabled = true;
+
+      var payload = Object.assign({
+        vorname: answers.vorname,
+        nachname: answers.nachname,
+        unternehmen: answers.unternehmen,
+        email: answers.email,
+        phone: answers.phone,
+        position: answers.position,
+        mitarbeiter_range: answers.mitarbeiter_range,
+        source: LANDINGPAGE_ID,
+        landingpage_id: LANDINGPAGE_ID,
+        session_id: sessionId,
+        timestamp: new Date().toISOString(),
+        page_url: location.href,
+        referrer: document.referrer || '',
+        user_agent: navigator.userAgent
+      }, trackingParams);
+
+      var send;
+      if (IS_LIVE) {
+        send = fetch(MAKE_WEBHOOK_URL, {
+          method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
+        }).then(function(r){ if (!r.ok) throw new Error('Webhook returned ' + r.status); });
+      } else {
+        console.info('[GC Preview] Make-Webhook (nicht gesendet):', payload);
+        send = new Promise(function(r){ setTimeout(r, 700); });
+      }
+
+      send.then(function(){
+        trackFunnelEvent('submit_success', null);
+        // Stufe 2 "CompleteRegistration": Formular vollständig
+        var crEventId = getEventId('complete_registration');
+        if (IS_LIVE) {
+          try {
+            if (typeof fbq === 'function') {
+              fbq('track', 'CompleteRegistration', { content_name:'Recruiting-Report angefordert', landingpage: LANDINGPAGE_ID }, { eventID: crEventId });
+            }
+          } catch(e){}
+        } else {
+          console.info('[GC Preview] pixel: CompleteRegistration (eventID ' + crEventId + ')');
+        }
+        sendLeadStageEvent('complete_registration', crEventId);
+        try {
+          localStorage.setItem('gc_lead_data', JSON.stringify({
+            vorname: answers.vorname, nachname: answers.nachname,
+            unternehmen: answers.unternehmen, email: answers.email, phone: answers.phone
+          }));
+        } catch(e){}
+        document.getElementById('lead-form').style.display = 'none';
+        progress.style.display = 'none';
+        document.getElementById('form-success').classList.add('active');
+        document.getElementById('sticky-cta').classList.remove('visible');
+        window.__gcSubmitted = true;
+        quizCard.scrollIntoView({ behavior:'smooth', block:'center' });
+      }).catch(function(err){
+        console.error('Form submit error:', err);
+        trackFunnelEvent('submit_failed', null);
+        step5Error.textContent = 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.';
+        step5Error.classList.add('active');
+        finalSubmit.textContent = originalText;
+        finalSubmit.disabled = false;
+      });
+    });
+
+    [emailInput, fullnameInput, firmaInput, phoneInput].forEach(function(el){
+      el.addEventListener('input', function(){ el.classList.remove('is-error'); });
+    });
+
+    // Report öffnen (Success)
+    document.getElementById('report-open').addEventListener('click', function(){
+      trackPixelEvent('Report_Opened', { landingpage: LANDINGPAGE_ID });
+    });
+
+    /* =====================================================
+       UI: Scroll-zu-Quiz-CTAs, Sticky-CTA, Reveal, Marquee
+       ===================================================== */
+    document.querySelectorAll('[data-scroll-quiz]').forEach(function(el){
+      el.addEventListener('click', function(e){
+        e.preventDefault();
+        trackPixelEvent(el.id === 'sticky-cta-link' ? 'Sticky_CTA_Clicked' : 'Quiz_Started', { landingpage: LANDINGPAGE_ID, cta_location: el.id || 'cta' });
+        quizCard.scrollIntoView({ behavior:'smooth', block:'start' });
+      });
+    });
+
+    var stickyCta = document.getElementById('sticky-cta');
+    var heroSection = document.getElementById('top');
+    function updateStickyCta(){
+      if (window.__gcSubmitted) { stickyCta.classList.remove('visible'); return; }
+      var heroBottom = heroSection.getBoundingClientRect().bottom;
+      var quizRect = quizCard.getBoundingClientRect();
+      var quizVisible = quizRect.top < window.innerHeight * .75 && quizRect.bottom > 100;
+      stickyCta.classList.toggle('visible', heroBottom < 0 && !quizVisible);
+    }
+    window.addEventListener('scroll', updateStickyCta, { passive:true });
+    updateStickyCta();
+
+    // Scroll-Depth (einmalig je Marke)
+    var depthFired = {};
+    window.addEventListener('scroll', function(){
+      var pct = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+      [50, 90].forEach(function(mark){
+        if (pct >= mark && !depthFired[mark]) {
+          depthFired[mark] = true;
+          trackPixelEvent('Scroll_' + mark, { landingpage: LANDINGPAGE_ID });
+        }
+      });
+    }, { passive:true });
+
+    // Reveal-Animationen (IO + Scroll-Fallback, damit Anchor-Sprünge nichts überspringen)
+    var pending = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+    function revealEl(el){
+      el.classList.add('in');
+      var i = pending.indexOf(el);
+      if (i > -1) pending.splice(i, 1);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if (en.isIntersecting) { revealEl(en.target); io.unobserve(en.target); }
+        });
+      }, { threshold:.12, rootMargin:'0px 0px -40px 0px' });
+      pending.forEach(function(el){ io.observe(el); });
+      window.addEventListener('scroll', function(){
+        if (!pending.length) return;
+        pending.slice().forEach(function(el){
+          if (el.getBoundingClientRect().top < window.innerHeight + 60) { revealEl(el); io.unobserve(el); }
+        });
+      }, { passive:true });
+    } else {
+      pending.slice().forEach(revealEl);
+    }
+
+    // Marquee: Inhalt duplizieren für nahtlosen Loop
+    var track = document.getElementById('marquee-track');
+    track.innerHTML += track.innerHTML;
+
+    /* =====================================================
+       NETZWERK-MAP: Live-Feed (Chips ortskorrekt am Punkt)
+       ===================================================== */
+    (function(){
+      var mapEl = document.querySelector('.network-map');
+      if (!mapEl) return;
+      var VW = 460, VH = 540;
+      // x/y in SVG-Koordinaten der jeweiligen Stadt
+      var FEED = [
+        { x:159,   y:97.4,  t:'Neuer Bewerber', s:'Landschaftsgärtner · Raum Hamburg' },
+        { x:130.3, y:363,   t:'Neuer Bewerber', s:'Landschaftsgärtner · Raum Stuttgart' },
+        { x:279.7, y:154.8, t:'Neuer Bewerber', s:'Vorarbeiter · Raum Berlin' },
+        { x:215.3, y:398.6, t:'Einstellung',    s:'Vorarbeiter · Raum München' },
+        { x:51.7,  y:242.7, t:'Wechselbereit',  s:'Bauleiter · Raum Köln' },
+        { x:291.8, y:236.6, t:'Neuer Bewerber', s:'Vorarbeiter · Raum Dresden' },
+        { x:149.8, y:163.1, t:'Wechselbereit',  s:'Landschaftsgärtner · Raum Hannover' },
+        { x:197.6, y:325.7, t:'Neuer Bewerber', s:'Bauleiter · Raum Nürnberg' },
+        { x:75.4,  y:185.9, t:'Einstellung',    s:'Landschaftsgärtner · Raum Münster' },
+        { x:112.6, y:288.9, t:'Neuer Bewerber', s:'Facharbeiter · Raum Frankfurt' },
+        { x:384.9, y:394.7, t:'Neuer Bewerber', s:'Landschaftsgärtner · Raum Wien' },
+        { x:107.6, y:441.5, t:'Wechselbereit',  s:'Vorarbeiter · Raum Zürich' }
+      ];
+      function makeChip(item){
+        var chip = document.createElement('div');
+        chip.className = 'map-chip';
+        var xPct = Math.min(Math.max(item.x / VW * 100, 24), 76);
+        chip.style.left = xPct + '%';
+        chip.style.top = (item.y / VH * 100) + '%';
+        chip.innerHTML = '<span class="cd"></span><span><b>' + item.t + '</b>' + item.s + '</span>';
+        var ping = document.createElement('div');
+        ping.className = 'map-ping';
+        ping.style.left = (item.x / VW * 100) + '%';
+        ping.style.top = (item.y / VH * 100) + '%';
+        return { chip: chip, ping: ping };
+      }
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) {
+        [FEED[0], FEED[1], FEED[10]].forEach(function(item){
+          var el = makeChip(item);
+          el.chip.classList.add('on');
+          mapEl.appendChild(el.chip);
+        });
+        return;
+      }
+      var order = FEED.slice(), idx = 0;
+      function shuffle(a){ for (var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } }
+      shuffle(order);
+      function next(){
+        var item = order[idx];
+        idx = (idx + 1) % order.length;
+        if (idx === 0) shuffle(order);
+        var el = makeChip(item);
+        mapEl.appendChild(el.chip);
+        mapEl.appendChild(el.ping);
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){
+          el.chip.classList.add('on');
+          el.ping.classList.add('on');
+        }); });
+        setTimeout(function(){
+          el.chip.classList.remove('on');
+          setTimeout(function(){ el.chip.remove(); el.ping.remove(); }, 350);
+        }, 3000);
+        setTimeout(next, 2000 + Math.random() * 2000);
+      }
+      setTimeout(next, 900);
+    })();
+  })();
+  </script>
+</body>
+</html>
