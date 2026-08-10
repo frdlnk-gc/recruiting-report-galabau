@@ -189,6 +189,19 @@
     .logo-chip{flex:none;background:#fff;border-radius:12px;padding:10px 18px;display:flex;align-items:center;justify-content:center;height:58px;}
     .logo-chip img{height:36px;width:auto;max-width:120px;object-fit:contain;}
 
+
+    /* Curiosity-Block */
+    .tease-grid{display:grid;gap:30px;align-items:center;}
+    @media(min-width:1024px){.tease-grid{grid-template-columns:1.15fr .85fr;gap:56px;}}
+    .tease-list{list-style:none;margin-top:24px;display:grid;gap:14px;}
+    .tease-list li{position:relative;padding-left:34px;font-size:.98rem;line-height:1.6;color:var(--ink-dim);}
+    .tease-list li b{color:var(--ink);}
+    .tease-list li::before{content:'';position:absolute;left:0;top:6px;width:18px;height:18px;border-radius:50%;background:rgba(34,197,94,.14);border:1.5px solid var(--green-bright);}
+    .tease-list li::after{content:'?';position:absolute;left:5px;top:5px;font-size:.72rem;font-weight:800;color:var(--green-bright);}
+    .tease-note{margin-top:22px;font-family:var(--font-serif);font-style:italic;font-weight:600;font-size:1.05rem;color:var(--mint);}
+    .tease-cover{max-width:330px;margin:0 auto;}
+    .tease-cover .preview-frame{transform:rotate(1.4deg);}
+
     /* Preview slider */
     .preview-scroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px 20px 10px;margin:0 -20px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
     .preview-scroll::-webkit-scrollbar{display:none;}
@@ -325,7 +338,7 @@
       <div class="hero-copy">
         <span class="hero-badge"><span class="dot"></span> Für GaLaBau-Betriebe mit 15–100 Mitarbeitern</span>
         <h1>Schluss mit Hoffen. <span class="ital">Fachkräfte mit System.</span></h1>
-        <p class="hero-sub">Welche <b>5 Kanäle</b> 2026 wirklich Bewerber liefern, was eine Einstellung <b>pro Kanal kostet</b> – und wie Betriebe Ihrer Größe Stellen <b>in unter 45 Tagen</b> besetzen.</p>
+        <p class="hero-sub">Das System, mit dem Betriebe Ihrer Größe offene Stellen <b>in unter 45 Tagen</b> besetzen – und der weit verbreitete Recruiting-Weg, der Sie <b>pro Einstellung fünfstellig kostet</b>, ohne auf einer Rechnung aufzutauchen.</p>
         <div class="trust-strip in-copy">
           <span class="trust-item"><span class="stars">★★★★★</span> <b>4,9</b> auf Google</span>
           <span class="trust-item"><b>500+</b>&nbsp;GaLaBau-Betriebe</span>
@@ -483,67 +496,25 @@
     </div>
   </div>
 
-  <!-- ===== BLICK IN DEN REPORT ===== -->
+  <!-- ===== CURIOSITY ===== -->
   <section id="einblick">
     <div class="container">
-      <div class="section-label reveal">Blick in den Report</div>
-      <h2 class="section-title reveal">Sehen Sie selbst, <em class="accent">was drin steckt.</em></h2>
-      <p class="section-sub reveal">Drei Original-Seiten aus dem Report – damit Sie vorher wissen, was Sie bekommen.</p>
-
-      <div class="preview-scroll reveal">
-        <div class="preview-card">
-          <div class="preview-frame"><img src="assets/report-page-05.jpg" alt="Report-Seite 5: Drei Zahlen, die alles erklären" loading="lazy" decoding="async"></div>
-          <div class="preview-meta"><span class="preview-page">S. 5</span><span class="preview-caption">Drei Zahlen, die alles erklären – die Ausgangslage, mit der jeder Betrieb 2026 rechnen muss.</span></div>
+      <div class="tease-grid">
+        <div>
+          <div class="section-label reveal">Im Report</div>
+          <h2 class="section-title reveal">Was Sie nach 20 Minuten <em class="accent">Lesezeit wissen.</em></h2>
+          <ul class="tease-list reveal">
+            <li>Welcher Recruiting-Weg fast jeden bezahlten Kanal schlägt – und warum ihn trotzdem kaum ein Betrieb konsequent nutzt</li>
+            <li>Welcher beliebte Kanal Sie pro Einstellung <b>fünfstellig</b> kostet, ohne dass es je auf einer Rechnung auftaucht</li>
+            <li>Woran Sie in fünf Minuten erkennen, ob Ihr Recruiting dieses Jahr liefert – oder Sie eine Saison verlieren</li>
+            <li>Der 3-Stufen-Plan, mit dem Betriebe Ihrer Größe in 90 Tagen ein planbares System stehen haben</li>
+          </ul>
+          <p class="tease-note reveal">Die Antworten stehen im Report – bewusst nicht auf dieser Seite.</p>
         </div>
-        <div class="preview-card">
-          <div class="preview-frame"><img src="assets/report-page-13.jpg" alt="Report-Seite 13: Effektivität vs. Aufwand Matrix" loading="lazy" decoding="async"></div>
-          <div class="preview-meta"><span class="preview-page">S. 13</span><span class="preview-caption">Die Matrix: alle 5 Kanäle nach Passung und Aufwand. Welche zwei gewinnen, steht im Report.</span></div>
-        </div>
-        <div class="preview-card">
-          <div class="preview-frame"><img src="assets/report-page-27.jpg" alt="Report-Seite 27: Kennzahlen-Dashboard" loading="lazy" decoding="async"></div>
-          <div class="preview-meta"><span class="preview-page">S. 27</span><span class="preview-caption">Fünf Kennzahlen statt 30 Metriken – die Vorlage, mit der Sie sofort starten können.</span></div>
+        <div class="tease-cover reveal">
+          <div class="preview-frame"><img src="assets/report-cover-large.jpg" alt="Recruiting-Report 2026 – Cover" loading="lazy" decoding="async"></div>
         </div>
       </div>
-      <div class="preview-hint">← Wischen für mehr →</div>
-
-      <div class="chapters reveal">
-        <div class="chapter"><span class="chapter-num">01</span><div class="chapter-body"><b>Status Quo: Der strukturelle Fachkräftemangel</b><span>Drei Zahlen, die alles erklären – und warum der GaLaBau besonders betroffen ist.</span></div><span class="chapter-page">ab S. 4</span></div>
-        <div class="chapter"><span class="chapter-num">02</span><div class="chapter-body"><b>Die 5 wirksamsten Recruiting-Kanäle</b><span>Das Ranking aus 540 Beratungsgesprächen – inklusive des Kanals, den fast alle überschätzen.</span></div><span class="chapter-page">ab S. 9</span></div>
-        <div class="chapter"><span class="chapter-num">03</span><div class="chapter-body"><b>Kosten pro Einstellung</b><span>Die Vollkosten-Rechnung, die kaum ein Betrieb macht – inkl. Vakanzkosten.</span></div><span class="chapter-page">ab S. 15</span></div>
-        <div class="chapter"><span class="chapter-num">04</span><div class="chapter-body"><b>Arbeitgebermarke: 7 Stellschrauben</b><span>Was 80 % Wirkung in 30 Tagen bringt – ohne Agentur.</span></div><span class="chapter-page">ab S. 20</span></div>
-        <div class="chapter"><span class="chapter-num">05</span><div class="chapter-body"><b>KI im Recruiting</b><span>Drei sinnvolle Anwendungen – und drei Versprechen, denen Sie nicht glauben sollten.</span></div><span class="chapter-page">ab S. 23</span></div>
-        <div class="chapter"><span class="chapter-num">06</span><div class="chapter-body"><b>Ihre Kennzahlen-Roadmap</b><span>Fünf Kennzahlen statt 30 Metriken – mit Vorlage zum sofort Loslegen.</span></div><span class="chapter-page">ab S. 26</span></div>
-        <div class="chapter"><span class="chapter-num">07</span><div class="chapter-body"><b>Praxisbeispiele aus dem Mittelstand</b><span>Drei Betriebe, drei Erfolge – plus Ihr 3-Stufen-Plan für 2026.</span></div><span class="chapter-page">ab S. 29</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ZAHLEN ===== -->
-  <section id="zahlen" style="padding-top:20px;">
-    <div class="container">
-      <div class="section-label reveal">Warum jetzt</div>
-      <h2 class="section-title reveal">Drei Zahlen, die 2026 <em class="accent">den Unterschied machen.</em></h2>
-      <div class="numbers-grid">
-        <div class="number-card reveal">
-          <div class="number-big">224 Tage</div>
-          <div class="number-label">bleibt eine Handwerks-Stelle im Schnitt unbesetzt</div>
-          <p class="number-desc">Wer heute ausschreibt, besetzt ohne System erst in über 7 Monaten.</p>
-          <span class="number-link">→ Kapitel 2 zeigt die schnelleren Wege</span>
-        </div>
-        <div class="number-card reveal">
-          <div class="number-big">49.500 €</div>
-          <div class="number-label">kostet eine unbesetzte Fachkraft-Stelle pro Jahr</div>
-          <p class="number-desc">Entgangene Aufträge, Überstunden, Produktivitätsverlust – die stille Rechnung.</p>
-          <span class="number-link">→ Kapitel 3 rechnet es ehrlich vor</span>
-        </div>
-        <div class="number-card reveal">
-          <div class="number-big">&gt; 500 %</div>
-          <div class="number-label">ROI einer Einstellung über den richtigen Kanal – im ersten Jahr</div>
-          <p class="number-desc">Jede besetzte Fachkraft-Stelle erwirtschaftet ein Vielfaches ihrer Recruiting-Kosten. Der Report zeigt die Rechnung – und den Weg dahin.</p>
-          <span class="number-link">→ Kapitel 3: die Vollkosten-Rechnung</span>
-        </div>
-      </div>
-      <p class="numbers-src reveal">Quellen: Bundesagentur für Arbeit, StepStone/BA-Auswertung 2023–2024; GreenCareers-Auswertung aus 540 Beratungsgesprächen (Q1 2026). Alle Details und Berechnungen im Report.</p>
     </div>
   </section>
 
@@ -583,25 +554,6 @@
               <circle class="city-ring" cx="69.1" cy="464.8" r="7" style="animation-delay:.9s"/><circle class="city-dot" cx="69.1" cy="464.8" r="4.5"/><circle class="city-core" cx="69.1" cy="464.8" r="1.6"/>
             </g>
           </svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FÜR BETRIEBE WIE IHREN ===== -->
-  <section id="zielgruppe" style="padding-top:20px;">
-    <div class="container">
-      <div class="audience-card reveal">
-        <div class="audience-img"><img src="assets/team-galabau.jpg" alt="GaLaBau-Inhaber mit seinem Team auf der Baustelle" loading="lazy" decoding="async"></div>
-        <div class="audience-copy">
-          <div class="section-label">Für wen dieser Report ist</div>
-          <h2 class="section-title" style="font-size:clamp(1.5rem,4.6vw,2.1rem);">Geschrieben für Betriebe <em class="accent">wie Ihren.</em></h2>
-          <p style="color:var(--ink-dim);font-size:.95rem;margin-top:12px;">Sie führen 15 bis 100 Leute, die Auftragsbücher sind voll – und jede unbesetzte Stelle bremst das Wachstum. Genau mit diesen Betrieben haben wir die 540 Gespräche geführt, aus denen dieser Report entstanden ist.</p>
-          <ul class="audience-list">
-            <li>Inhaber &amp; Geschäftsführer im GaLaBau</li>
-            <li>15–100 Mitarbeiter, wachstumsorientiert</li>
-            <li>Bereit, Mitarbeitergewinnung wie eine Baustelle zu planen: mit Zahlen statt Bauchgefühl</li>
-          </ul>
         </div>
       </div>
     </div>
