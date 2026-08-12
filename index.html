@@ -98,6 +98,11 @@
     .hero-cta-btn:hover{transform:translateY(-1px);box-shadow:0 16px 34px -8px rgba(22,163,74,.62);}
 
     .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+    @media(max-width:1023px){
+      .hero-copy{text-align:center;}
+      .hero-sub{margin-left:auto;margin-right:auto;}
+      .hero-chips{justify-content:center;}
+    }
     .hero-chip{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--ink-dim);background:rgba(10,23,16,.45);border:1px solid var(--line);border-radius:999px;padding:7px 13px;backdrop-filter:blur(6px);}
     .hero-chip b{color:var(--ink);}
     .hero-chip .stars{color:#FBBF24;letter-spacing:1px;font-size:.72rem;}
@@ -499,7 +504,7 @@
               <label class="quiz-label" for="unternehmen">Firmenname</label>
               <input type="text" class="quiz-input" id="unternehmen" name="unternehmen" placeholder="z. B. Müller GaLaBau GmbH" autocomplete="organization" autocapitalize="words" spellcheck="false">
             </div>
-            <button type="button" class="quiz-cta" id="quiz-step3-cta" data-next-from="3">Weiter →</button>
+            <button type="button" class="quiz-cta" id="quiz-step3-cta" data-next-from="3">Weiter zum Report →</button>
             <div class="quiz-error" id="quiz-step3-error">Bitte tragen Sie Vor-, Nachnamen und Firmennamen ein.</div>
             <button type="button" class="quiz-back" data-back="2">← Zurück</button>
           </div>
