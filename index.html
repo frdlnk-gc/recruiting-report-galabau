@@ -494,18 +494,13 @@
             <button type="button" class="quiz-back" data-back="1">← Zurück</button>
           </div>
 
-          <!-- STEP 3 — Name + Firma -->
+          <!-- STEP 3 — Name + Firma (Felder kommen erst bei Quiz-Start ins DOM,
+               damit der Meta-In-App-Browser beim Laden kein Kontaktformular
+               erkennt und nicht automatisch zum Quiz scrollt) -->
           <div class="quiz-slide" data-slide="3">
             <div class="quiz-kicker">Passt – Ihr Report wird vorbereitet.</div>
             <h3 class="quiz-question">An wen dürfen wir den Report adressieren?</h3>
-            <div class="quiz-input-group" style="margin-top:14px;">
-              <label class="quiz-label" for="fullname">Vor- und Nachname</label>
-              <input type="text" class="quiz-input" id="fullname" name="fullname" placeholder="z. B. Max Müller" autocomplete="name" autocapitalize="words" spellcheck="false">
-            </div>
-            <div class="quiz-input-group">
-              <label class="quiz-label" for="unternehmen">Firmenname</label>
-              <input type="text" class="quiz-input" id="unternehmen" name="unternehmen" placeholder="z. B. Müller GaLaBau GmbH" autocomplete="organization" autocapitalize="words" spellcheck="false">
-            </div>
+            <div data-tpl="tpl-fields-name"></div>
             <button type="button" class="quiz-cta" id="quiz-step3-cta" data-next-from="3">Weiter zum Report →</button>
             <div class="quiz-error" id="quiz-step3-error">Bitte tragen Sie Vor-, Nachnamen und Firmennamen ein.</div>
             <button type="button" class="quiz-back" data-back="2">← Zurück</button>
@@ -515,10 +510,7 @@
           <div class="quiz-slide" data-slide="4">
             <div class="quiz-kicker" id="quiz-kicker-greeting">Gleich ist Ihr Report unterwegs …</div>
             <h3 class="quiz-question">An welche E-Mail dürfen wir den Report senden?</h3>
-            <div class="quiz-input-group" style="margin-top:14px;">
-              <label class="quiz-label" for="email">Geschäftliche E-Mail</label>
-              <input type="email" class="quiz-input" id="email" name="email" placeholder="ihre@firma.de" autocomplete="email" autocapitalize="none" spellcheck="false" inputmode="email">
-            </div>
+            <div data-tpl="tpl-fields-email"></div>
             <button type="button" class="quiz-cta" id="quiz-step4-cta" data-next-from="4">Weiter →</button>
             <div class="quiz-error" id="quiz-step4-error">Bitte tragen Sie eine gültige E-Mail-Adresse ein.</div>
             <button type="button" class="quiz-back" data-back="3">← Zurück</button>
@@ -529,32 +521,55 @@
             <div class="quiz-kicker">✅ Ihr Report liegt zum Versand bereit – letzter Schritt:</div>
             <h3 class="quiz-question">Wohin dürfen wir den Report per WhatsApp senden?</h3>
             <p class="quiz-subtext">So haben Sie den Report <b>direkt auf dem Handy</b> – zusätzlich zur E-Mail-Kopie.</p>
-            <div class="quiz-input-group">
-              <label class="quiz-label" for="phone">Ihre Handynummer</label>
-              <div class="phone-row">
-                <select class="phone-prefix" id="phone-country" aria-label="Ländervorwahl">
-                  <option value="49" selected>DE +49</option>
-                  <option value="43">AT +43</option>
-                  <option value="41">CH +41</option>
-                  <option value="352">LU +352</option>
-                  <option value="33">FR +33</option>
-                  <option value="31">NL +31</option>
-                  <option value="32">BE +32</option>
-                  <option value="48">PL +48</option>
-                </select>
-                <input type="tel" class="quiz-input" id="phone" name="phone" placeholder="170 1234567" autocomplete="tel" inputmode="tel">
-              </div>
-            </div>
-            <label class="quiz-privacy">
-              <input type="checkbox" id="privacy" name="privacy">
-              <span>Ich stimme der <a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu und bin einverstanden, von GreenCareers kontaktiert zu werden.</span>
-            </label>
+            <div data-tpl="tpl-fields-phone"></div>
             <button type="button" class="quiz-cta" id="quiz-final-submit" disabled>Report holen →</button>
             <div class="quiz-error" id="quiz-step5-error">Bitte Handynummer eintragen und Datenschutz bestätigen.</div>
             <button type="button" class="quiz-back" data-back="4">← Zurück</button>
             <div class="quiz-trustline"><span>🔒 Kein Spam · Versand als PDF · DSGVO-konform</span></div>
           </div>
         </form>
+
+        <!-- Kontaktfeld-Templates: template-Inhalte sind inert (nicht im DOM-Baum),
+             bis mountContactFields() sie beim Quiz-Start einsetzt. Verhindert den
+             Autofill-Scroll des Meta-In-App-Browsers beim Seitenaufruf. -->
+        <template id="tpl-fields-name">
+          <div class="quiz-input-group" style="margin-top:14px;">
+            <label class="quiz-label" for="fullname">Vor- und Nachname</label>
+            <input type="text" class="quiz-input" id="fullname" name="fullname" placeholder="z. B. Max Müller" autocomplete="name" autocapitalize="words" spellcheck="false">
+          </div>
+          <div class="quiz-input-group">
+            <label class="quiz-label" for="unternehmen">Firmenname</label>
+            <input type="text" class="quiz-input" id="unternehmen" name="unternehmen" placeholder="z. B. Müller GaLaBau GmbH" autocomplete="organization" autocapitalize="words" spellcheck="false">
+          </div>
+        </template>
+        <template id="tpl-fields-email">
+          <div class="quiz-input-group" style="margin-top:14px;">
+            <label class="quiz-label" for="email">Geschäftliche E-Mail</label>
+            <input type="email" class="quiz-input" id="email" name="email" placeholder="ihre@firma.de" autocomplete="email" autocapitalize="none" spellcheck="false" inputmode="email">
+          </div>
+        </template>
+        <template id="tpl-fields-phone">
+          <div class="quiz-input-group">
+            <label class="quiz-label" for="phone">Ihre Handynummer</label>
+            <div class="phone-row">
+              <select class="phone-prefix" id="phone-country" aria-label="Ländervorwahl">
+                <option value="49" selected>DE +49</option>
+                <option value="43">AT +43</option>
+                <option value="41">CH +41</option>
+                <option value="352">LU +352</option>
+                <option value="33">FR +33</option>
+                <option value="31">NL +31</option>
+                <option value="32">BE +32</option>
+                <option value="48">PL +48</option>
+              </select>
+              <input type="tel" class="quiz-input" id="phone" name="phone" placeholder="170 1234567" autocomplete="tel" inputmode="tel">
+            </div>
+          </div>
+          <label class="quiz-privacy">
+            <input type="checkbox" id="privacy" name="privacy">
+            <span>Ich stimme der <a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu und bin einverstanden, von GreenCareers kontaktiert zu werden.</span>
+          </label>
+        </template>
 
         <!-- SUCCESS -->
         <div class="quiz-success" id="form-success">
@@ -891,6 +906,7 @@
         btn.classList.add('picked');
         if (!quizStarted) {
           quizStarted = true;
+          mountContactFields();
           trackPixelEvent('Quiz_Started', { landingpage: LANDINGPAGE_ID, cta_location: 'quiz_option_' + field });
         }
         var next = field === 'position' ? 2 : 3;
@@ -903,12 +919,41 @@
       btn.addEventListener('click', function(){ showSlide(parseInt(btn.dataset.back, 10)); });
     });
 
+    /* =====================================================
+       KONTAKTFELDER: erst bei Quiz-Start ins DOM
+       (Meta-In-App-Browser scannt beim Laden nach Kontakt-
+       formularen und scrollt sonst automatisch zum Quiz)
+       ===================================================== */
+    var fieldsMounted = false;
+    var fullnameInput, firmaInput, emailInput, phoneInput, privacyCheck;
+
+    function mountContactFields(){
+      if (fieldsMounted) return;
+      fieldsMounted = true;
+      document.querySelectorAll('[data-tpl]').forEach(function(slot){
+        var tpl = document.getElementById(slot.dataset.tpl);
+        if (tpl) slot.appendChild(tpl.content.cloneNode(true));
+      });
+      fullnameInput = document.getElementById('fullname');
+      firmaInput = document.getElementById('unternehmen');
+      emailInput = document.getElementById('email');
+      phoneInput = document.getElementById('phone');
+      privacyCheck = document.getElementById('privacy');
+
+      firmaInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); step3CTA.click(); } });
+      emailInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); step4CTA.click(); } });
+      phoneInput.addEventListener('input', evaluateFinalEnabled);
+      privacyCheck.addEventListener('change', evaluateFinalEnabled);
+      [emailInput, fullnameInput, firmaInput, phoneInput].forEach(function(el){
+        el.addEventListener('input', function(){ el.classList.remove('is-error'); });
+      });
+    }
+
     // STEP 3 — Name + Firma (vor E-Mail: niederschwelliger Einstieg, personalisiert den E-Mail-Step)
-    var fullnameInput = document.getElementById('fullname');
-    var firmaInput = document.getElementById('unternehmen');
     var step3CTA = document.getElementById('quiz-step3-cta');
     var step3Error = document.getElementById('quiz-step3-error');
     step3CTA.addEventListener('click', function(){
+      mountContactFields();
       var parts = fullnameInput.value.trim().split(/\s+/).filter(Boolean);
       var firma = firmaInput.value.trim();
       if (parts.length < 2 || firma.length < 2) {
@@ -923,13 +968,12 @@
       answers.unternehmen = firma;
       showSlide(4);
     });
-    firmaInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); step3CTA.click(); } });
 
     // STEP 4 — E-Mail → Lead-Stufe
-    var emailInput = document.getElementById('email');
     var step4CTA = document.getElementById('quiz-step4-cta');
     var step4Error = document.getElementById('quiz-step4-error');
     step4CTA.addEventListener('click', function(){
+      mountContactFields();
       var email = emailInput.value.trim();
       var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       if (!valid) { emailInput.classList.add('is-error'); step4Error.classList.add('active'); return; }
@@ -954,11 +998,8 @@
       }
       showSlide(5);
     });
-    emailInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); step4CTA.click(); } });
 
     // STEP 5 — Telefon + Datenschutz → Submit
-    var phoneInput = document.getElementById('phone');
-    var privacyCheck = document.getElementById('privacy');
     var finalSubmit = document.getElementById('quiz-final-submit');
     var step5Error = document.getElementById('quiz-step5-error');
 
@@ -966,10 +1007,9 @@
       var digits = phoneInput.value.replace(/\D/g,'');
       finalSubmit.disabled = !(digits.length >= 6 && privacyCheck.checked);
     }
-    phoneInput.addEventListener('input', evaluateFinalEnabled);
-    privacyCheck.addEventListener('change', evaluateFinalEnabled);
 
     finalSubmit.addEventListener('click', function(){
+      mountContactFields();
       var digits = phoneInput.value.replace(/\D/g,'');
       if (digits.length < 6 || !privacyCheck.checked) { step5Error.classList.add('active'); return; }
       step5Error.classList.remove('active');
@@ -1044,10 +1084,6 @@
         finalSubmit.textContent = originalText;
         finalSubmit.disabled = false;
       });
-    });
-
-    [emailInput, fullnameInput, firmaInput, phoneInput].forEach(function(el){
-      el.addEventListener('input', function(){ el.classList.remove('is-error'); });
     });
 
     // Report öffnen (Success)
