@@ -59,9 +59,9 @@
 
     /* ===== Topbar ===== */
     .topbar{position:absolute;top:0;left:0;right:0;z-index:20;padding:14px 0;}
-    .topbar .container{display:flex;align-items:center;justify-content:flex-end;}
-    .topbar img{height:36px;width:auto;}
-    @media(min-width:1024px){.topbar{padding:18px 0;}.topbar img{height:40px;}}
+    .topbar .container{display:flex;align-items:center;justify-content:center;}
+    .topbar img{height:30px;width:auto;}
+    @media(min-width:1024px){.topbar{padding:18px 0;}.topbar img{height:36px;}}
 
     /* ===== Hero ===== */
     .hero{position:relative;padding:64px 0 40px;display:flex;align-items:center;}
@@ -290,9 +290,10 @@
     /* Network map */
     .network-grid{display:grid;gap:30px;margin-top:8px;align-items:center;}
     @media(min-width:1024px){.network-grid{grid-template-columns:1fr 1.05fr;gap:56px;}}
-    .network-stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;}
-    .network-stat b{display:block;font-family:var(--font-serif);font-weight:600;font-size:1.6rem;color:var(--mint);letter-spacing:-.01em;}
-    .network-stat span{font-size:.78rem;color:var(--ink-dim);}
+    .network-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;}
+    .network-stat b{display:block;font-family:var(--font-serif);font-weight:600;font-size:clamp(1.25rem,5.6vw,1.6rem);color:var(--mint);letter-spacing:-.01em;white-space:nowrap;}
+    .network-stat span{display:block;font-size:.72rem;color:var(--ink-dim);line-height:1.35;margin-top:2px;}
+    @media(min-width:768px){.network-stats{gap:22px;}.network-stat span{font-size:.78rem;}}
     .network-map{position:relative;max-width:480px;margin:10px auto 0;width:100%;}
     .network-map svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35));}
     .country{fill:rgba(34,197,94,.07);stroke:rgba(110,231,160,.38);stroke-width:1.4;stroke-linejoin:round;}
@@ -335,8 +336,10 @@
     .testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex:none;}
     .testi-name{font-weight:700;font-size:.85rem;line-height:1.3;}
     .testi-verified{font-size:.72rem;color:var(--q-dim);}
-    .google-badge{display:inline-flex;align-items:center;gap:9px;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.82rem;font-weight:600;color:var(--ink-dim);margin-top:22px;}
+    .google-badge{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 8px;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:.82rem;font-weight:600;color:var(--ink-dim);margin-top:22px;}
     .google-badge b{color:var(--ink);}
+    .gb-item{white-space:nowrap;}
+    .gb-item + .gb-item::before{content:'·';margin-right:8px;color:var(--ink-faint);}
 
     /* Final CTA */
     .final-cta{background:linear-gradient(150deg,#123522,var(--bg-2) 70%);border:1px solid rgba(110,231,160,.22);border-radius:26px;padding:44px 26px;text-align:center;position:relative;overflow:hidden;}
@@ -370,7 +373,7 @@
   <!-- ===== TOPBAR ===== -->
   <header class="topbar">
     <div class="container">
-      <img src="assets/logo-white.png" alt="GreenCareers" width="120" height="40" style="height:40px;width:auto;">
+      <img src="assets/logo-white.png" alt="GreenCareers" width="120" height="40">
     </div>
   </header>
 
@@ -386,7 +389,7 @@
       <div class="hero-copy">
         <span class="hero-badge"><span class="dot"></span> Kostenlos für GaLaBau-Inhaber</span>
         <h1>Wie GaLaBau-Betriebe 2026 offene Stellen <span class="ital nowrap">in unter 45 Tagen</span> besetzen</h1>
-        <p class="hero-sub hero-sub-short">32 Seiten – gratis als PDF</p>
+        <p class="hero-sub hero-sub-short">32&nbsp;Seiten – gratis als PDF</p>
         <a class="hero-cta-btn" href="#quiz" data-scroll-quiz id="hero-cta">Report holen — in 45&nbsp;Sek. →</a>
         <div class="hero-chips">
           <span class="hero-chip">🔒 DSGVO-konform</span>
@@ -415,7 +418,7 @@
               </div>
               <div class="book-bottom">
                 <span class="book-branch">Garten- &amp;<br>Landschaftsbau</span>
-                <span class="book-pages-count">32 Seiten</span>
+                <span class="book-pages-count">32&nbsp;Seiten</span>
               </div>
             </div>
           </div>
@@ -448,7 +451,7 @@
     <div class="container">
       <div class="quiz-sec-head">
         <div class="section-label">Recruiting-Report 2026</div>
-        <h2 class="section-title">Kostenloser 32-Seiten-Report – <em class="accent">in 45 Sek. angefordert.</em></h2>
+        <h2 class="section-title">Kostenloser 32-Seiten-Report – <em class="accent">in 45&nbsp;Sek. angefordert.</em></h2>
         <p class="section-sub">Ein Klick, drei kurze Angaben – dann erhalten Sie den Report per E-Mail und WhatsApp. Keine Verpflichtung.</p>
       </div>
 
@@ -466,7 +469,7 @@
         <div class="quiz-progress" id="quiz-progress">
           <div class="quiz-progress-top">
             <span id="quiz-progress-label">Schritt 1 von 5</span>
-            <span id="quiz-progress-time">≈ 45 Sek. übrig</span>
+            <span id="quiz-progress-time">≈ 45&nbsp;Sek. übrig</span>
           </div>
           <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
         </div>
@@ -485,7 +488,7 @@
               <button type="button" class="quiz-tile" data-field="rolle" data-value="andere-branche"><span class="tile-icon">💼</span><span class="tile-label"><b>Andere</b> Branche</span></button>
             </div>
             <div class="quiz-trustline">
-              <span>⏱ 4 kurze Schritte, unter 45 Sek.</span>
+              <span>⏱ 4 kurze Schritte, unter 45&nbsp;Sek.</span>
               <span>🔒 DSGVO-konform</span>
             </div>
           </div>
@@ -563,7 +566,7 @@
           <div class="success-check">✓</div>
           <h3>Freigeschaltet.</h3>
           <p>Ihr Recruiting-Report 2026 ist bereit – viel Erfolg bei der nächsten Einstellung.</p>
-          <a class="success-open" id="report-open" href="assets/recruiting-report-2026.pdf" target="_blank" rel="noopener">Report jetzt öffnen (PDF, 32 Seiten) →</a>
+          <a class="success-open" id="report-open" href="assets/recruiting-report-2026.pdf" target="_blank" rel="noopener">Report jetzt öffnen (PDF, 32&nbsp;Seiten) →</a>
           <p class="success-mailnote">Ihre Kopie ist außerdem per <b>WhatsApp und E-Mail</b> unterwegs – so haben Sie den Report auch unterwegs griffbereit.</p>
         </div>
       </div>
@@ -576,12 +579,12 @@
       <div class="tease-grid">
         <div>
           <div class="section-label reveal">Im Report</div>
-          <h2 class="section-title reveal">Was Sie nach 20 Minuten <em class="accent">Lesezeit wissen.</em></h2>
+          <h2 class="section-title reveal">Was Sie nach 20&nbsp;Minuten <em class="accent">Lesezeit wissen.</em></h2>
           <ul class="tease-list reveal">
             <li>Welcher Recruiting-Weg fast jeden bezahlten Kanal schlägt – und warum ihn trotzdem kaum ein Betrieb konsequent nutzt</li>
             <li>Welcher beliebte Kanal Sie pro Einstellung <b>fünfstellig</b> kostet, ohne dass es je auf einer Rechnung auftaucht</li>
             <li>Woran Sie in fünf Minuten erkennen, ob Ihr Recruiting dieses Jahr liefert – oder Sie eine Saison verlieren</li>
-            <li>Der 3-Stufen-Plan, mit dem Betriebe Ihrer Größe in 90 Tagen ein planbares System stehen haben</li>
+            <li>Der 3-Stufen-Plan, mit dem Betriebe Ihrer Größe in 90&nbsp;Tagen ein planbares System stehen haben</li>
           </ul>
           <p class="tease-note reveal">Die Antworten stehen im Report – bewusst nicht auf dieser Seite.</p>
         </div>
@@ -659,7 +662,7 @@
           <div class="testi-foot"><span class="testi-avatar">BD</span><div><div class="testi-name">Boas Diehl</div><div class="testi-verified">✓ Verifizierte Google-Bewertung</div></div></div>
         </div>
       </div>
-      <div style="text-align:center;"><span class="google-badge reveal">Google <b>4,9 / 5</b> <span style="color:#FBBF24;letter-spacing:1px;">★★★★★</span> · 500+ Betriebe · 900+ Platzierungen</span></div>
+      <div style="text-align:center;"><span class="google-badge reveal"><span class="gb-item">Google <b>4,9/5</b> <span style="color:#FBBF24;letter-spacing:1px;">★★★★★</span></span><span class="gb-item">500+ Betriebe</span><span class="gb-item">900+ Platzierungen</span></span></div>
     </div>
   </section>
 
@@ -668,9 +671,9 @@
     <div class="container">
       <div class="final-cta reveal">
         <h2>Ihre nächste Einstellung – <span class="ital">planbar statt Zufall.</span></h2>
-        <p>Holen Sie sich die Benchmarks, Vollkosten-Rechnungen und Vorlagen, mit denen GaLaBau-Betriebe ihre Stellen in unter 45 Tagen besetzen.</p>
+        <p>Holen Sie sich die Benchmarks, Vollkosten-Rechnungen und Vorlagen, mit denen GaLaBau-Betriebe ihre Stellen in unter 45&nbsp;Tagen besetzen.</p>
         <a class="btn-primary" href="#quiz" data-scroll-quiz>Gratis-Report sichern →</a>
-        <div class="final-note">32 Seiten · PDF · Sofort-Zugriff · Keine Verpflichtung</div>
+        <div class="final-note">32&nbsp;Seiten · PDF · Sofort-Zugriff · Keine Verpflichtung</div>
       </div>
     </div>
   </section>
@@ -855,7 +858,7 @@
     var quizCard = document.getElementById('quiz');
     var quizStarted = false;
     var TOTAL_STEPS = 4;
-    var TIME_LEFT = {1:'≈ 45 Sek.',2:'≈ 30 Sek.',3:'≈ 20 Sek.',4:'≈ 10 Sek.'};
+    var TIME_LEFT = {1:'≈ 45\u00A0Sek.',2:'≈ 30\u00A0Sek.',3:'≈ 20\u00A0Sek.',4:'≈ 10\u00A0Sek.'};
 
     function showSlide(n){
       if (n === 3 && answers.vorname) {
