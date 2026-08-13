@@ -129,7 +129,7 @@
     .fan-2{transform:rotate(9.5deg) translateX(8%);z-index:-2;}
     .fan-3{transform:rotate(15deg) translateX(12%);z-index:-3;filter:brightness(.97);}
     .book-glow{position:absolute;width:140%;height:140%;top:-20%;left:-20%;background:radial-gradient(circle,rgba(34,197,94,.25) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:-2;filter:blur(30px);}
-    .book-seal{position:absolute;top:-18px;right:-16px;width:70px;height:70px;z-index:10;transform:rotate(12deg);filter:drop-shadow(0 6px 14px rgba(0,0,0,.4));pointer-events:none;}
+    .book-seal{position:absolute;top:-18px;right:-18px;width:70px;height:70px;z-index:12;transform:rotate(12deg);filter:drop-shadow(0 6px 14px rgba(0,0,0,.4));pointer-events:none;}
     @media(min-width:1024px){.book-seal{width:88px;height:88px;top:-22px;right:-20px;}}
     .book-seal svg{width:100%;height:100%;display:block;}
     .book-cover{position:relative;width:100%;height:100%;background:linear-gradient(160deg,#10281B 0%,#153122 30%,#1C4029 65%,#10281B 100%);border-radius:3px 8px 8px 3px;box-shadow:0 25px 50px rgba(0,0,0,.5),0 12px 25px rgba(0,0,0,.3),inset 0 0 90px rgba(0,0,0,.25),inset 8px 0 14px rgba(0,0,0,.5),inset -2px 0 4px rgba(110,231,160,.12);padding:26px 24px 22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;}
@@ -456,15 +456,15 @@
                 <rect x="118" y="224" width="34" height="10" rx="5" fill="rgba(22,163,74,.4)"/>
               </g></svg>
             </div>
+            <div class="book-seal" aria-hidden="true">
+              <svg viewBox="0 0 100 100">
+                <defs><linearGradient id="sealGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22C55E"/><stop offset="1" stop-color="#15803D"/></linearGradient></defs>
+                <polygon fill="url(#sealGrad)" points="50.0,0.0 55.7,6.9 62.9,1.7 66.6,9.8 75.0,6.7 76.5,15.5 85.4,14.6 84.5,23.5 93.3,25.0 90.2,33.4 98.3,37.1 93.1,44.3 100.0,50.0 93.1,55.7 98.3,62.9 90.2,66.6 93.3,75.0 84.5,76.5 85.4,85.4 76.5,84.5 75.0,93.3 66.6,90.2 62.9,98.3 55.7,93.1 50.0,100.0 44.3,93.1 37.1,98.3 33.4,90.2 25.0,93.3 23.5,84.5 14.6,85.4 15.5,76.5 6.7,75.0 9.8,66.6 1.7,62.9 6.9,55.7 0.0,50.0 6.9,44.3 1.7,37.1 9.8,33.4 6.7,25.0 15.5,23.5 14.6,14.6 23.5,15.5 25.0,6.7 33.4,9.8 37.1,1.7 44.3,6.9"/>
+                <circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.4" stroke-dasharray="2.5 3"/>
+                <text x="50" y="56" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="17.5" font-weight="800" letter-spacing=".5" fill="#fff">GRATIS</text>
+              </svg>
+            </div>
             <div class="book">
-              <div class="book-seal" aria-hidden="true">
-                <svg viewBox="0 0 100 100">
-                  <defs><linearGradient id="sealGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22C55E"/><stop offset="1" stop-color="#15803D"/></linearGradient></defs>
-                  <polygon fill="url(#sealGrad)" points="50.0,0.0 55.7,6.9 62.9,1.7 66.6,9.8 75.0,6.7 76.5,15.5 85.4,14.6 84.5,23.5 93.3,25.0 90.2,33.4 98.3,37.1 93.1,44.3 100.0,50.0 93.1,55.7 98.3,62.9 90.2,66.6 93.3,75.0 84.5,76.5 85.4,85.4 76.5,84.5 75.0,93.3 66.6,90.2 62.9,98.3 55.7,93.1 50.0,100.0 44.3,93.1 37.1,98.3 33.4,90.2 25.0,93.3 23.5,84.5 14.6,85.4 15.5,76.5 6.7,75.0 9.8,66.6 1.7,62.9 6.9,55.7 0.0,50.0 6.9,44.3 1.7,37.1 9.8,33.4 6.7,25.0 15.5,23.5 14.6,14.6 23.5,15.5 25.0,6.7 33.4,9.8 37.1,1.7 44.3,6.9"/>
-                  <circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.4" stroke-dasharray="2.5 3"/>
-                  <text x="50" y="56" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="17.5" font-weight="800" letter-spacing=".5" fill="#fff">GRATIS</text>
-                </svg>
-              </div>
               <div class="book-pages-edge"></div>
               <div class="book-cover">
                 <div class="book-spine-edge"></div>
