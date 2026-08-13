@@ -95,14 +95,18 @@
     .hero-sub b{color:var(--ink);font-weight:600;}
     .hero-sub-short{font-size:clamp(1.02rem,2.9vw,1.2rem);font-weight:600;}
 
-    .hero-cta-btn{display:inline-block;text-decoration:none;text-align:center;font-size:1rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:13px;padding:15px 26px;margin-top:20px;box-shadow:0 12px 30px -8px rgba(22,163,74,.55);transition:transform .12s,box-shadow .15s;}
+    .hero-cta-btn{display:inline-block;text-decoration:none;text-align:center;font-size:1.02rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green-bright),var(--green) 55%,var(--green-deep));border-radius:13px;padding:16px 40px;margin-top:20px;box-shadow:0 12px 30px -8px rgba(22,163,74,.55);transition:transform .12s,box-shadow .15s;}
     .hero-cta-btn:hover{transform:translateY(-1px);box-shadow:0 16px 34px -8px rgba(22,163,74,.62);}
 
-    .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:8px;}
     @media(max-width:1023px){
       .hero-copy{text-align:center;}
       .hero-sub{margin-left:auto;margin-right:auto;}
       .hero-chips{justify-content:center;}
+    }
+    @media(min-width:1024px){
+      .hero .container{gap:30px 56px;}
+      .hero-chips{grid-column:1;align-self:start;}
     }
     .hero-chip{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--ink-dim);background:rgba(10,23,16,.45);border:1px solid var(--line);border-radius:999px;padding:7px 13px;backdrop-filter:blur(6px);}
     .hero-chip b{color:var(--ink);}
@@ -110,16 +114,24 @@
     .g-mini{font-weight:700;letter-spacing:.01em;}
     .g-mini span:nth-child(1){color:#4285F4}.g-mini span:nth-child(2){color:#EA4335}.g-mini span:nth-child(3){color:#FBBC05}.g-mini span:nth-child(4){color:#4285F4}.g-mini span:nth-child(5){color:#34A853}.g-mini span:nth-child(6){color:#EA4335}
 
-    /* ===== Hero-Mockup: 3D-Buch ===== */
+    /* ===== Hero-Mockup: 3D-Buch mit Seiten-Fächer (deutet Inhalt an) ===== */
     .hero-mockup{display:flex;justify-content:center;}
-    .book-container{position:relative;width:212px;height:288px;margin:0 auto;perspective:1200px;padding-top:18px;}
-    @media(min-width:1024px){.book-container{width:290px;height:394px;margin-top:0;}}
-    .book{position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:bookFloat 5s ease-in-out infinite;transform:rotateY(-6deg) rotateX(2deg);}
-    .book::after{content:'';position:absolute;left:8%;right:8%;bottom:-24px;height:30px;background:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,transparent 70%);filter:blur(10px);z-index:-1;}
-    @keyframes bookFloat{0%,100%{transform:translateY(0) rotateY(-6deg) rotateX(2deg);}50%{transform:translateY(-10px) rotateY(-4deg) rotateX(1deg);}}
+    .book-container{position:relative;width:264px;height:288px;margin:0 auto;perspective:1200px;padding-top:18px;}
+    @media(min-width:1024px){.book-container{width:360px;height:394px;margin-top:0;}}
+    .book-float{position:relative;width:212px;height:100%;animation:bookFloat 5s ease-in-out infinite;}
+    @media(min-width:1024px){.book-float{width:290px;}}
+    .book-float::after{content:'';position:absolute;left:4%;right:-16%;bottom:-24px;height:30px;background:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,transparent 70%);filter:blur(10px);z-index:-6;}
+    .book{position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateY(-6deg) rotateX(2deg);z-index:1;}
+    @keyframes bookFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    .fan-page{position:absolute;top:2.5%;left:10%;width:88%;height:94%;background:#FBFAF7;border-radius:3px 9px 9px 3px;box-shadow:10px 5px 24px rgba(0,0,0,.30);transform-origin:left bottom;overflow:hidden;}
+    .fan-page svg{position:absolute;inset:0;width:100%;height:100%;}
+    .fan-1{transform:rotate(4.5deg) translateX(4%);z-index:-1;}
+    .fan-2{transform:rotate(9.5deg) translateX(8%);z-index:-2;}
+    .fan-3{transform:rotate(15deg) translateX(12%);z-index:-3;filter:brightness(.97);}
     .book-glow{position:absolute;width:140%;height:140%;top:-20%;left:-20%;background:radial-gradient(circle,rgba(34,197,94,.25) 0%,transparent 60%);border-radius:50%;pointer-events:none;z-index:-2;filter:blur(30px);}
-    .book-badge{position:absolute;top:0;right:6px;background:var(--green);color:#fff;font-size:.66rem;font-weight:800;padding:6px 14px;border-radius:7px;text-transform:uppercase;letter-spacing:.12em;box-shadow:0 6px 16px rgba(22,163,74,.45),0 2px 4px rgba(0,0,0,.2);transform:rotate(8deg);animation:badgeWiggle 2.5s ease-in-out infinite;z-index:10;}
-    @keyframes badgeWiggle{0%,100%{transform:rotate(8deg) scale(1);}50%{transform:rotate(8deg) scale(1.05);}}
+    .book-seal{position:absolute;top:-18px;right:-16px;width:70px;height:70px;z-index:10;transform:rotate(12deg);filter:drop-shadow(0 6px 14px rgba(0,0,0,.4));pointer-events:none;}
+    @media(min-width:1024px){.book-seal{width:88px;height:88px;top:-22px;right:-20px;}}
+    .book-seal svg{width:100%;height:100%;display:block;}
     .book-cover{position:relative;width:100%;height:100%;background:linear-gradient(160deg,#10281B 0%,#153122 30%,#1C4029 65%,#10281B 100%);border-radius:3px 8px 8px 3px;box-shadow:0 25px 50px rgba(0,0,0,.5),0 12px 25px rgba(0,0,0,.3),inset 0 0 90px rgba(0,0,0,.25),inset 8px 0 14px rgba(0,0,0,.5),inset -2px 0 4px rgba(110,231,160,.12);padding:26px 24px 22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;}
     .book-cover::before{content:'';position:absolute;inset:0;background:linear-gradient(125deg,transparent 42%,rgba(255,255,255,.06) 50%,transparent 58%);pointer-events:none;}
     .book-cover::after{content:'';position:absolute;top:11px;left:18px;right:11px;bottom:11px;border:1px solid rgba(110,231,160,.22);border-radius:3px;pointer-events:none;}
@@ -390,39 +402,96 @@
         <span class="hero-badge"><span class="dot"></span> Kostenlos für GaLaBau-Inhaber</span>
         <h1>Wie GaLaBau-Betriebe 2026 offene Stellen <span class="ital nowrap">in unter 45 Tagen</span> besetzen</h1>
         <p class="hero-sub hero-sub-short">32&nbsp;Seiten – gratis als PDF</p>
-        <a class="hero-cta-btn" href="#quiz" data-scroll-quiz id="hero-cta">Report holen — in 45&nbsp;Sek. →</a>
-        <div class="hero-chips">
-          <span class="hero-chip">🔒 DSGVO-konform</span>
-          <span class="hero-chip"><span class="g-mini"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span> <span class="stars">★★★★★</span> <b>4,9</b></span>
-          <span class="hero-chip"><b>500+</b> Arbeitgeber</span>
-          <span class="hero-chip"><b>30.000+</b> Fachkräfte</span>
-        </div>
+        <a class="hero-cta-btn" href="#quiz" data-scroll-quiz id="hero-cta">Report herunterladen →</a>
       </div>
 
       <div class="hero-mockup">
         <div class="book-container">
           <div class="book-glow"></div>
-          <span class="book-badge">Gratis</span>
-          <div class="book">
-            <div class="book-pages-edge"></div>
-            <div class="book-cover">
-              <div class="book-spine-edge"></div>
-              <div class="book-top">
-                <img class="book-logo-img" src="assets/logo-white.png" alt="GreenCareers">
+          <div class="book-float">
+            <div class="fan-page fan-3">
+              <svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)">
+                <polyline points="118,64 132,48 146,58 160,36 176,44" fill="none" stroke="rgba(22,163,74,.55)" stroke-width="3" stroke-linecap="round"/>
+                <rect x="118" y="84" width="52" height="4" rx="2" fill="#8E9A90"/>
+                <rect x="118" y="98" width="60" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="108" width="46" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="118" width="56" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="146" width="58" height="34" rx="4" fill="none" stroke="#D8D4C8" stroke-width="2"/>
+                <rect x="126" y="158" width="28" height="3" rx="1.5" fill="#C9C3B5"/>
+                <rect x="126" y="167" width="36" height="3" rx="1.5" fill="#C9C3B5"/>
+                <rect x="118" y="200" width="60" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="210" width="50" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="220" width="56" height="3" rx="1.5" fill="#DDD8CC"/>
+              </g></svg>
+            </div>
+            <div class="fan-page fan-2">
+              <svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)">
+                <circle cx="146" cy="62" r="22" fill="none" stroke="#DDD8CC" stroke-width="9"/>
+                <path d="M146 40 a22 22 0 0 1 20.5 30" fill="none" stroke="rgba(22,163,74,.55)" stroke-width="9"/>
+                <rect x="118" y="100" width="56" height="4" rx="2" fill="#8E9A90"/>
+                <rect x="118" y="114" width="60" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="124" width="48" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="152" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/>
+                <rect x="138" y="152" width="38" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="164" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/>
+                <rect x="138" y="164" width="32" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="176" width="14" height="3" rx="1.5" fill="rgba(22,163,74,.5)"/>
+                <rect x="138" y="176" width="40" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="206" width="58" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="216" width="44" height="3" rx="1.5" fill="#DDD8CC"/>
+              </g></svg>
+            </div>
+            <div class="fan-page fan-1">
+              <svg viewBox="0 0 200 270" aria-hidden="true"><g transform="translate(18 0)">
+                <rect x="118" y="42" width="54" height="4" rx="2" fill="#8E9A90"/>
+                <rect x="118" y="56" width="60" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="66" width="50" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="122" y="128" width="10" height="34" rx="2" fill="#D8D4C8"/>
+                <rect x="136" y="112" width="10" height="50" rx="2" fill="#C9C3B5"/>
+                <rect x="150" y="96" width="10" height="66" rx="2" fill="rgba(22,163,74,.5)"/>
+                <rect x="164" y="120" width="10" height="42" rx="2" fill="#D8D4C8"/>
+                <rect x="118" y="176" width="58" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="186" width="46" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="196" width="54" height="3" rx="1.5" fill="#DDD8CC"/>
+                <rect x="118" y="224" width="34" height="10" rx="5" fill="rgba(22,163,74,.4)"/>
+              </g></svg>
+            </div>
+            <div class="book">
+              <div class="book-seal" aria-hidden="true">
+                <svg viewBox="0 0 100 100">
+                  <defs><linearGradient id="sealGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22C55E"/><stop offset="1" stop-color="#15803D"/></linearGradient></defs>
+                  <polygon fill="url(#sealGrad)" points="50.0,0.0 55.7,6.9 62.9,1.7 66.6,9.8 75.0,6.7 76.5,15.5 85.4,14.6 84.5,23.5 93.3,25.0 90.2,33.4 98.3,37.1 93.1,44.3 100.0,50.0 93.1,55.7 98.3,62.9 90.2,66.6 93.3,75.0 84.5,76.5 85.4,85.4 76.5,84.5 75.0,93.3 66.6,90.2 62.9,98.3 55.7,93.1 50.0,100.0 44.3,93.1 37.1,98.3 33.4,90.2 25.0,93.3 23.5,84.5 14.6,85.4 15.5,76.5 6.7,75.0 9.8,66.6 1.7,62.9 6.9,55.7 0.0,50.0 6.9,44.3 1.7,37.1 9.8,33.4 6.7,25.0 15.5,23.5 14.6,14.6 23.5,15.5 25.0,6.7 33.4,9.8 37.1,1.7 44.3,6.9"/>
+                  <circle cx="50" cy="50" r="36" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.4" stroke-dasharray="2.5 3"/>
+                  <text x="50" y="56" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="17.5" font-weight="800" letter-spacing=".5" fill="#fff">GRATIS</text>
+                </svg>
               </div>
-              <div class="book-title-block">
-                <div class="book-eyebrow">Der Branchen-Report</div>
-                <div class="book-title">Recruiting-<br>Report</div>
-                <div class="book-year">2026</div>
-                <div class="book-divider"></div>
-              </div>
-              <div class="book-bottom">
-                <span class="book-branch">Garten- &amp;<br>Landschaftsbau</span>
-                <span class="book-pages-count">32&nbsp;Seiten</span>
+              <div class="book-pages-edge"></div>
+              <div class="book-cover">
+                <div class="book-spine-edge"></div>
+                <div class="book-top">
+                  <img class="book-logo-img" src="assets/logo-white.png" alt="GreenCareers">
+                </div>
+                <div class="book-title-block">
+                  <div class="book-eyebrow">Der Branchen-Report</div>
+                  <div class="book-title">Recruiting-<br>Report</div>
+                  <div class="book-year">2026</div>
+                  <div class="book-divider"></div>
+                </div>
+                <div class="book-bottom">
+                  <span class="book-branch">Garten- &amp;<br>Landschaftsbau</span>
+                  <span class="book-pages-count">32&nbsp;Seiten</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="hero-chips">
+        <span class="hero-chip">🔒 DSGVO-konform</span>
+        <span class="hero-chip"><span class="g-mini"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span> <span class="stars">★★★★★</span> <b>4,9</b></span>
+        <span class="hero-chip"><b>500+</b> Arbeitgeber</span>
+        <span class="hero-chip"><b>30.000+</b> Fachkräfte</span>
       </div>
     </div>
   </section>
