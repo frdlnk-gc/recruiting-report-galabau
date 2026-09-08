@@ -11,6 +11,24 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon-32.png">
 
+  <!-- ===== OpenAI Ads Pixel (oaiq) — nur live auf *.green-careers.de =====
+       Datenquelle "GreenCareers (Neukunden)". Der Loader muss im Head stehen,
+       damit oppref aus der URL gelesen wird, bevor Skripte die URL anfassen.
+       Consent: bewusst NICHT auf true gesetzt -> das SDK sendet cookielos
+       (omitCredentials). Sobald ein Consent-Banner existiert, dort
+       oaiq('consent', true) nachziehen. ===================================== -->
+  <script>
+  (function(){
+    if (!/(^|\.)green-careers\.de$/.test(location.hostname)) return;
+    window.oaiq = window.oaiq || function(){ (window.oaiq.q = window.oaiq.q || []).push(arguments); };
+    window.oaiq('init', { pixelId: 'VctKY8ZpwBRvUeTWHgLEs5' });
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://bzrcdn.openai.com/sdk/oaiq.min.js';
+    document.head.appendChild(s);
+  })();
+  </script>
+
   <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -777,6 +795,7 @@
     var FUNNEL_EVENT_ENDPOINT = 'https://gc-tracking-dashboard.vercel.app/api/recruiting/funnel-event';
     var LEAD_EVENT_ENDPOINT = 'https://gc-tracking-dashboard.vercel.app/api/tracking/lead-event';
     var META_PIXEL_ID = '634469765867935';
+    var OAIQ_PIXEL_ID = 'VctKY8ZpwBRvUeTWHgLEs5'; // OpenAI Ads, Loader steht im <head>
     var CLARITY_PROJECT_ID = ''; // Microsoft-Clarity-Projekt-ID eintragen → Heatmaps/Recordings aktiv
 
     // Live nur auf *.green-careers.de — auf der Vercel-Test-URL werden
@@ -824,7 +843,7 @@
       var out = {};
       try {
         var p = new URLSearchParams(location.search);
-        ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(function(k){
+        ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','oppref'].forEach(function(k){
           var v = p.get(k);
           if (v) out[k] = v;
         });
@@ -882,6 +901,15 @@
       if (!IS_LIVE) { console.info('[GC Preview] pixel:', name, params || {}); return; }
       try { if (typeof fbq === 'function') fbq('trackCustom', name, params || {}); } catch(e){}
     }
+
+    // OpenAI Ads: nur die vom SDK erlaubten Standard-Events verwenden
+    // (page_viewed, lead_created, registration_completed, ...) — ein unbekannter
+    // Name wird serverseitig als "unsupported_event_name" verworfen.
+    function trackOaiqEvent(name, payload){
+      if (!IS_LIVE) { console.info('[GC Preview] oaiq:', name, payload || {}); return; }
+      try { if (typeof window.oaiq === 'function') window.oaiq('measure', name, payload || {}); } catch(e){}
+    }
+    trackOaiqEvent('page_viewed', { type: 'recruiting_report_galabau' });
 
     function sendLeadStageEvent(stage, eventId){
       var body = Object.assign({
@@ -1056,6 +1084,7 @@
           } else {
             console.info('[GC Preview] pixel: Lead (eventID ' + leadEventId + ')');
           }
+          trackOaiqEvent('lead_created', { type: 'recruiting_report_galabau' });
           sendLeadStageEvent('lead', leadEventId);
         }
         showSlide(4);
@@ -1118,6 +1147,7 @@
         } else {
           console.info('[GC Preview] pixel: CompleteRegistration (eventID ' + crEventId + ')');
         }
+        trackOaiqEvent('registration_completed', { type: 'recruiting_report_galabau' });
         sendLeadStageEvent('complete_registration', crEventId);
         try {
           localStorage.setItem('gc_lead_data', JSON.stringify({
