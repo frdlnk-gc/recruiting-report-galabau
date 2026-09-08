@@ -902,14 +902,23 @@
       try { if (typeof fbq === 'function') fbq('trackCustom', name, params || {}); } catch(e){}
     }
 
-    // OpenAI Ads: nur die vom SDK erlaubten Standard-Events verwenden
-    // (page_viewed, lead_created, registration_completed, ...) — ein unbekannter
-    // Name wird serverseitig als "unsupported_event_name" verworfen.
-    function trackOaiqEvent(name, payload){
-      if (!IS_LIVE) { console.info('[GC Preview] oaiq:', name, payload || {}); return; }
-      try { if (typeof window.oaiq === 'function') window.oaiq('measure', name, payload || {}); } catch(e){}
+    // OpenAI Ads: nur dokumentierte Standard-Event-Namen sind erlaubt, und
+    // eventProps.type MUSS die zum Event gehoerende Kategorie sein — ein freies
+    // Label dort laesst das SDK das Event still verwerfen ("validation failed;
+    // event dropped"). Deshalb kommt der Typ aus dieser Map, nicht vom Aufrufer.
+    var OAIQ_EVENT_TYPES = {
+      page_viewed: 'contents',
+      lead_created: 'customer_action',
+      registration_completed: 'customer_action',
+      appointment_scheduled: 'customer_action'
+    };
+    function trackOaiqEvent(name){
+      var type = OAIQ_EVENT_TYPES[name];
+      if (!type) { console.warn('[GC] oaiq: unbekanntes Event ' + name + ' — nicht gesendet'); return; }
+      if (!IS_LIVE) { console.info('[GC Preview] oaiq:', name, { type: type }); return; }
+      try { if (typeof window.oaiq === 'function') window.oaiq('measure', name, { type: type }); } catch(e){}
     }
-    trackOaiqEvent('page_viewed', { type: 'recruiting_report_galabau' });
+    trackOaiqEvent('page_viewed');
 
     function sendLeadStageEvent(stage, eventId){
       var body = Object.assign({
@@ -1084,7 +1093,7 @@
           } else {
             console.info('[GC Preview] pixel: Lead (eventID ' + leadEventId + ')');
           }
-          trackOaiqEvent('lead_created', { type: 'recruiting_report_galabau' });
+          trackOaiqEvent('lead_created');
           sendLeadStageEvent('lead', leadEventId);
         }
         showSlide(4);
@@ -1147,7 +1156,7 @@
         } else {
           console.info('[GC Preview] pixel: CompleteRegistration (eventID ' + crEventId + ')');
         }
-        trackOaiqEvent('registration_completed', { type: 'recruiting_report_galabau' });
+        trackOaiqEvent('registration_completed');
         sendLeadStageEvent('complete_registration', crEventId);
         try {
           localStorage.setItem('gc_lead_data', JSON.stringify({
