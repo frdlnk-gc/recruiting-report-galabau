@@ -918,6 +918,19 @@
       if (!IS_LIVE) { console.info('[GC Preview] oaiq:', name, { type: type }); return; }
       try { if (typeof window.oaiq === 'function') window.oaiq('measure', name, { type: type }); } catch(e){}
     }
+
+    // Zusaetzlich das benutzerdefinierte Ereignis, auf das die Conversion
+    // "Report angefordert" im Ads Manager hoert. Solange dort das Basisereignis
+    // "Benutzerdefiniert" steht, zaehlt NUR dieser Aufruf — das Standard-Event
+    // registration_completed laeuft parallel als sauberes Optimierungssignal.
+    function trackOaiqCustom(customName){
+      if (!IS_LIVE) { console.info('[GC Preview] oaiq custom:', customName); return; }
+      try {
+        if (typeof window.oaiq === 'function') {
+          window.oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: customName });
+        }
+      } catch(e){}
+    }
     trackOaiqEvent('page_viewed');
 
     function sendLeadStageEvent(stage, eventId){
@@ -1157,6 +1170,7 @@
           console.info('[GC Preview] pixel: CompleteRegistration (eventID ' + crEventId + ')');
         }
         trackOaiqEvent('registration_completed');
+        trackOaiqCustom('registrierung_abgeschlossen');
         sendLeadStageEvent('complete_registration', crEventId);
         try {
           localStorage.setItem('gc_lead_data', JSON.stringify({
