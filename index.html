@@ -858,6 +858,7 @@
       } catch(e){ return ''; }
     }
     function getFbp(){ return getCookie('_fbp'); }
+    function getObref(){ return getCookie('__obref'); }
     function getFbc(){
       var c = getCookie('_fbc');
       if (c) return c;
@@ -912,11 +913,16 @@
       registration_completed: 'customer_action',
       appointment_scheduled: 'customer_action'
     };
-    function trackOaiqEvent(name){
+    function trackOaiqEvent(name, eventId){
       var type = OAIQ_EVENT_TYPES[name];
       if (!type) { console.warn('[GC] oaiq: unbekanntes Event ' + name + ' — nicht gesendet'); return; }
-      if (!IS_LIVE) { console.info('[GC Preview] oaiq:', name, { type: type }); return; }
-      try { if (typeof window.oaiq === 'function') window.oaiq('measure', name, { type: type }); } catch(e){}
+      if (!IS_LIVE) { console.info('[GC Preview] oaiq:', name, { type: type }, eventId || ''); return; }
+      try {
+        if (typeof window.oaiq === 'function') {
+          if (eventId) window.oaiq('measure', name, { type: type }, { event_id: eventId });
+          else window.oaiq('measure', name, { type: type });
+        }
+      } catch(e){}
     }
 
     // Zusaetzlich das benutzerdefinierte Ereignis, auf das die Conversion
@@ -947,6 +953,7 @@
         rolle: answers.rolle || '',
         fbp: getFbp(),
         fbc: getFbc(),
+        obref: getObref(),
         page_url: location.href,
         referrer: document.referrer || '',
         user_agent: navigator.userAgent
@@ -1106,7 +1113,7 @@
           } else {
             console.info('[GC Preview] pixel: Lead (eventID ' + leadEventId + ')');
           }
-          trackOaiqEvent('lead_created');
+          trackOaiqEvent('lead_created', leadEventId);
           sendLeadStageEvent('lead', leadEventId);
         }
         showSlide(4);
@@ -1169,7 +1176,7 @@
         } else {
           console.info('[GC Preview] pixel: CompleteRegistration (eventID ' + crEventId + ')');
         }
-        trackOaiqEvent('registration_completed');
+        trackOaiqEvent('registration_completed', crEventId);
         trackOaiqCustom('registrierung_abgeschlossen');
         sendLeadStageEvent('complete_registration', crEventId);
         try {
