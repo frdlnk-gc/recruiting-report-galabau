@@ -909,6 +909,7 @@
     // event dropped"). Deshalb kommt der Typ aus dieser Map, nicht vom Aufrufer.
     var OAIQ_EVENT_TYPES = {
       page_viewed: 'contents',
+      lead_created: 'customer_action',
       registration_completed: 'customer_action',
       appointment_scheduled: 'customer_action'
     };
@@ -1100,7 +1101,8 @@
           } else {
             console.info('[GC Preview] pixel: Lead (eventID ' + leadEventId + ')');
           }
-          // OpenAI zaehlt erst den erfolgreichen Report-Abschluss in Step 4.
+          // E-Mail-Zwischenstufe bleibt separat; die Report-Conversion folgt in Step 4.
+          trackOaiqEvent('lead_created', leadEventId);
           sendLeadStageEvent('lead', leadEventId);
         }
         showSlide(4);
