@@ -909,7 +909,6 @@
     // event dropped"). Deshalb kommt der Typ aus dieser Map, nicht vom Aufrufer.
     var OAIQ_EVENT_TYPES = {
       page_viewed: 'contents',
-      lead_created: 'customer_action',
       registration_completed: 'customer_action',
       appointment_scheduled: 'customer_action'
     };
@@ -925,18 +924,6 @@
       } catch(e){}
     }
 
-    // Zusaetzlich das benutzerdefinierte Ereignis, auf das die Conversion
-    // "Report angefordert" im Ads Manager hoert. Solange dort das Basisereignis
-    // "Benutzerdefiniert" steht, zaehlt NUR dieser Aufruf — das Standard-Event
-    // registration_completed laeuft parallel als sauberes Optimierungssignal.
-    function trackOaiqCustom(customName){
-      if (!IS_LIVE) { console.info('[GC Preview] oaiq custom:', customName); return; }
-      try {
-        if (typeof window.oaiq === 'function') {
-          window.oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: customName });
-        }
-      } catch(e){}
-    }
     trackOaiqEvent('page_viewed');
 
     function sendLeadStageEvent(stage, eventId){
@@ -1113,7 +1100,7 @@
           } else {
             console.info('[GC Preview] pixel: Lead (eventID ' + leadEventId + ')');
           }
-          trackOaiqEvent('lead_created', leadEventId);
+          // OpenAI zaehlt erst den erfolgreichen Report-Abschluss in Step 4.
           sendLeadStageEvent('lead', leadEventId);
         }
         showSlide(4);
@@ -1177,7 +1164,6 @@
           console.info('[GC Preview] pixel: CompleteRegistration (eventID ' + crEventId + ')');
         }
         trackOaiqEvent('registration_completed', crEventId);
-        trackOaiqCustom('registrierung_abgeschlossen');
         sendLeadStageEvent('complete_registration', crEventId);
         try {
           localStorage.setItem('gc_lead_data', JSON.stringify({
